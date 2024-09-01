@@ -4,11 +4,8 @@ public partial class ClickDetector : Camera3D
 {
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventMouseButton eventMouseButton
-			&& eventMouseButton.Pressed
-			&& eventMouseButton.ButtonIndex == MouseButton.Left)
+		if (@event is InputEventMouseButton { Pressed: true, ButtonIndex: MouseButton.Left } eventMouseButton)
 		{
-			GD.Print("Input");
 			Vector2 mousePosition = eventMouseButton.Position;
 
 			Camera3D camera = (Camera3D)GetTree().Root.FindChild("Camera3D", true, false);
@@ -17,11 +14,9 @@ public partial class ClickDetector : Camera3D
 
 			var spaceState = GetWorld3D().DirectSpaceState;
 			var result = spaceState.IntersectRay(PhysicsRayQueryParameters3D.Create(from, to));
-			GD.Print(result);
 
 			if (result.Count > 0)
 			{
-				GD.Print("Count > 0");
 				if (result.TryGetValue("collider", out var colliderVariant))
 				{
 					Node collider = (Node)colliderVariant;
@@ -30,6 +25,9 @@ public partial class ClickDetector : Camera3D
 
 					if (collider is Machine machine)
 						machine.OnInteract();
+					
+					// if (collider is IInteractable interactable)
+					// 	interactable.Interact();
 
 					//if (collider.HasMethod("SomeMethod"))
 					//{

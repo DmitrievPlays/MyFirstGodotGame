@@ -10,11 +10,12 @@ public partial class ResourceManager : Button
 	public override void _Ready()
 	{
 		Instance = this;
+		LoadResources();
 	}
 
 	public override void _Pressed()
 	{
-		LoadResources();
+
 		GD.Print("load");
 	}
 

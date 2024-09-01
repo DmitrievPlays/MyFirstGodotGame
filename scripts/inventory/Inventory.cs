@@ -7,6 +7,7 @@ public class Inventory
 
     public Inventory(int maxSlots)
     {
+	    InventorySlots = new Dictionary<int, Slot>();
         InventorySlotCount = maxSlots;
     }
 
@@ -23,5 +24,15 @@ public class Inventory
 	public void RemoveItem(int slotId)
 	{
 		InventorySlots.Remove(slotId);
+	}
+
+	public int GetMaxSlots()
+	{
+		return InventorySlotCount;
+	}
+	
+	public int GetFreeSlots()
+	{
+		return InventorySlotCount - InventorySlots.Count;
 	}
 }

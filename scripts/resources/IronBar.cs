@@ -1,4 +1,4 @@
-public partial class IronBar : Resource
+public class IronBar: Resource
 {
 	public IronBar()
 	{

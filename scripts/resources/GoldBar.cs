@@ -1,4 +1,4 @@
-public partial class GoldBar : Resource
+public class GoldBar : Resource
 {
     public GoldBar()
     {
