@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://b261tw4omst6n"]
+
+[ext_resource type="Script" path="res://scripts/tooltip/Tooltip.cs" id="1_mpxw2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgirp"]
+bg_color = Color(0.6, 0.389914, 0.116366, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.28125, 0.28125, 0.28125, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 3
+
+[node name="Tooltip" type="PanelContainer"]
+offset_right = 100.0
+offset_bottom = 108.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgirp")
+script = ExtResource("1_mpxw2")
+
+[node name="FlowContainer" type="FlowContainer" parent="."]
+layout_mode = 2
+
+[node name="slot_id" type="Label" parent="FlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="name" type="Label" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="id" type="Label" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[node name="description" type="Label" parent="FlowContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+autowrap_mode = 2

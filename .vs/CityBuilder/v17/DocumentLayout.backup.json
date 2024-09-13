@@ -3,84 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\interactables\\ore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\interactables\\ore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\machines\\furnace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\machines\\furnace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\multiplayer\\gameserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\multiplayer\\gameserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\interactables\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\interactables\\machine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\player\\playerinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\player\\playerinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\inventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\inventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\player\\playerinventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\player\\playerinventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\inventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\inventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\slot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\slot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\custominventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\custominventoryscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\originalresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\originalresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\machines\\waterextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\machines\\waterextractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\goldbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\goldbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\machines\\furnace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\machines\\furnace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\manager\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\manager\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\interactables\\ironore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\interactables\\ironore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\dropped\\pickableitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\dropped\\pickableitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\ironbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\ironbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\inventory\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\silicon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\silicon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\soundmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\copperbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\copperbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\interactables\\ironore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\interactables\\ironore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\prototype\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\prototype\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\player\\clickdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\player\\clickdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\modresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\modresources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\interactables\\goldore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\interactables\\goldore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\water.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\prototype\\worldresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\prototype\\worldresource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\resources\\pickaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE87E2EB-0E27-47A7-85A4-5F41F68A8291}|CityBuilder.csproj|solutionrelative:scripts\\resources\\pickaxe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|c:\\users\\dplays\\desktop\\citybuilder\\scripts\\playerinventories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30094779-36F8-45BF-8509-6B7D8376D8B7}|CityBuilder.csproj|solutionrelative:scripts\\playerinventories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,209 +66,177 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Resource.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\prototype\\Resource.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\prototype\\Resource.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\prototype\\Resource.cs",
-              "RelativeToolTip": "scripts\\resources\\prototype\\Resource.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:32:26.715Z",
-              "IsPinned": true
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "WorldResource.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\prototype\\WorldResource.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\prototype\\WorldResource.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\prototype\\WorldResource.cs",
-              "RelativeToolTip": "scripts\\resources\\prototype\\WorldResource.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PlayerInventoryScreen.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\player\\PlayerInventoryScreen.cs",
+              "RelativeDocumentMoniker": "scripts\\inventory\\player\\PlayerInventoryScreen.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\player\\PlayerInventoryScreen.cs",
+              "RelativeToolTip": "scripts\\inventory\\player\\PlayerInventoryScreen.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T11:34:41.656Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ResourceManager.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\manager\\ResourceManager.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\manager\\ResourceManager.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\manager\\ResourceManager.cs",
-              "RelativeToolTip": "scripts\\resources\\manager\\ResourceManager.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwDYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T18:22:15.419Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OriginalResources.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\OriginalResources.cs",
-              "RelativeDocumentMoniker": "scripts\\OriginalResources.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\OriginalResources.cs",
-              "RelativeToolTip": "scripts\\OriginalResources.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T22:04:27.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GoldBar.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\GoldBar.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\GoldBar.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\GoldBar.cs",
-              "RelativeToolTip": "scripts\\resources\\GoldBar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T22:10:55.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CopperBar.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\CopperBar.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\CopperBar.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\CopperBar.cs",
-              "RelativeToolTip": "scripts\\resources\\CopperBar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T22:59:47.962Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Silicon.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\Silicon.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\Silicon.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\Silicon.cs",
-              "RelativeToolTip": "scripts\\resources\\Silicon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T23:06:08.089Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IronBar.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\IronBar.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\IronBar.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\IronBar.cs",
-              "RelativeToolTip": "scripts\\resources\\IronBar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T23:06:32.865Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ModResources.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\ModResources.cs",
-              "RelativeDocumentMoniker": "scripts\\ModResources.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\ModResources.cs",
-              "RelativeToolTip": "scripts\\ModResources.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAACHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T23:16:11.045Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Water.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\Water.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\Water.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\Water.cs",
-              "RelativeToolTip": "scripts\\resources\\Water.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T23:16:48.917Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\player\\PlayerController.cs",
-              "RelativeDocumentMoniker": "scripts\\player\\PlayerController.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\player\\PlayerController.cs",
-              "RelativeToolTip": "scripts\\player\\PlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:16:20.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Pickaxe.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\Pickaxe.cs",
-              "RelativeDocumentMoniker": "scripts\\resources\\Pickaxe.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\resources\\Pickaxe.cs",
-              "RelativeToolTip": "scripts\\resources\\Pickaxe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T14:54:27.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Inventory.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\Inventory.cs",
-              "RelativeDocumentMoniker": "scripts\\inventory\\Inventory.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\Inventory.cs",
-              "RelativeToolTip": "scripts\\inventory\\Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T16:02:49.759Z"
+              "WhenOpened": "2024-09-11T21:05:57.88Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Machine.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\interactables\\Machine.cs",
-              "RelativeDocumentMoniker": "scripts\\interactables\\Machine.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\interactables\\Machine.cs",
-              "RelativeToolTip": "scripts\\interactables\\Machine.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA3AAAAAAAAAA==",
+              "Title": "PlayerInventory.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\player\\PlayerInventory.cs",
+              "RelativeDocumentMoniker": "scripts\\inventory\\player\\PlayerInventory.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\player\\PlayerInventory.cs",
+              "RelativeToolTip": "scripts\\inventory\\player\\PlayerInventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T16:30:41.838Z"
+              "WhenOpened": "2024-09-09T01:48:03.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "InventoryScreen.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\InventoryScreen.cs",
+              "RelativeDocumentMoniker": "scripts\\inventory\\InventoryScreen.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\InventoryScreen.cs",
+              "RelativeToolTip": "scripts\\inventory\\InventoryScreen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T01:39:11.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Furnace.cs",
               "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\machines\\Furnace.cs",
               "RelativeDocumentMoniker": "scripts\\machines\\Furnace.cs",
               "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\machines\\Furnace.cs",
               "RelativeToolTip": "scripts\\machines\\Furnace.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T16:37:21.658Z"
+              "WhenOpened": "2024-09-12T02:44:16.662Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GoldOre.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\interactables\\GoldOre.cs",
-              "RelativeDocumentMoniker": "scripts\\interactables\\GoldOre.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\interactables\\GoldOre.cs",
-              "RelativeToolTip": "scripts\\interactables\\GoldOre.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "WaterExtractor.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\machines\\WaterExtractor.cs",
+              "RelativeDocumentMoniker": "scripts\\machines\\WaterExtractor.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\machines\\WaterExtractor.cs",
+              "RelativeToolTip": "scripts\\machines\\WaterExtractor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T17:46:02.354Z"
+              "WhenOpened": "2024-09-12T02:44:21.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Ore.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\interactables\\Ore.cs",
+              "RelativeDocumentMoniker": "scripts\\interactables\\Ore.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\interactables\\Ore.cs",
+              "RelativeToolTip": "scripts\\interactables\\Ore.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAADgvzMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T00:06:20.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameServer.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\multiplayer\\GameServer.cs",
+              "RelativeDocumentMoniker": "scripts\\multiplayer\\GameServer.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\multiplayer\\GameServer.cs",
+              "RelativeToolTip": "scripts\\multiplayer\\GameServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T15:29:52.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomInventoryScreen.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\CustomInventoryScreen.cs",
+              "RelativeDocumentMoniker": "scripts\\inventory\\CustomInventoryScreen.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\CustomInventoryScreen.cs",
+              "RelativeToolTip": "scripts\\inventory\\CustomInventoryScreen.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwDAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T02:35:48.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\player\\PlayerController.cs",
+              "RelativeDocumentMoniker": "scripts\\player\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\player\\PlayerController.cs",
+              "RelativeToolTip": "scripts\\player\\PlayerController.cs",
+              "ViewState": "AgIAANQAAAAAAAAAAAAMwOIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T23:14:51.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\Inventory.cs",
+              "RelativeDocumentMoniker": "scripts\\inventory\\Inventory.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\Inventory.cs",
+              "RelativeToolTip": "scripts\\inventory\\Inventory.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAnwC8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T21:06:03.323Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "PickableItem.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\dropped\\PickableItem.cs",
+              "RelativeDocumentMoniker": "scripts\\dropped\\PickableItem.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\dropped\\PickableItem.cs",
+              "RelativeToolTip": "scripts\\dropped\\PickableItem.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T00:34:39.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SoundManager.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\SoundManager.cs",
+              "RelativeDocumentMoniker": "scripts\\SoundManager.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\SoundManager.cs",
+              "RelativeToolTip": "scripts\\SoundManager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T01:00:15.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PlayerInventories.cs",
+              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\PlayerInventories.cs",
+              "RelativeDocumentMoniker": "scripts\\PlayerInventories.cs",
+              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\PlayerInventories.cs",
+              "RelativeToolTip": "scripts\\PlayerInventories.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-08T14:49:49.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "IronOre.cs",
               "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\interactables\\IronOre.cs",
               "RelativeDocumentMoniker": "scripts\\interactables\\IronOre.cs",
@@ -300,43 +244,7 @@
               "RelativeToolTip": "scripts\\interactables\\IronOre.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T17:46:02.985Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ClickDetector.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\player\\ClickDetector.cs",
-              "RelativeDocumentMoniker": "scripts\\player\\ClickDetector.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\player\\ClickDetector.cs",
-              "RelativeToolTip": "scripts\\player\\ClickDetector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T17:46:03.255Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Slot.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\Slot.cs",
-              "RelativeDocumentMoniker": "scripts\\inventory\\Slot.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\Slot.cs",
-              "RelativeToolTip": "scripts\\inventory\\Slot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:02:55.655Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InventoryScreen.cs",
-              "DocumentMoniker": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\InventoryScreen.cs",
-              "RelativeDocumentMoniker": "scripts\\inventory\\InventoryScreen.cs",
-              "ToolTip": "C:\\Users\\DPLAYS\\Desktop\\citybuilder\\scripts\\inventory\\InventoryScreen.cs",
-              "RelativeToolTip": "scripts\\inventory\\InventoryScreen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA+wAQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:48:28.92Z"
+              "WhenOpened": "2024-09-10T00:30:49.28Z"
             }
           ]
         }

@@ -1,7 +1,17 @@
-﻿public class InventoryScreen
+﻿using Godot;
+using System.Collections.Generic;
+
+public abstract partial class InventoryScreen : Control
 {
-	public void Show(Inventory inventory)
+	protected PackedScene InventoryItem { get; set; }
+
+	public override void _Ready()
 	{
-		//TODO
+		InventoryItem = ResourceLoader.Load<PackedScene>("res://InventoryItem.tscn");
+	}
+
+	public virtual void ShowScreen(Inventory inventory)
+	{
+		Visible = true;
 	}
 }

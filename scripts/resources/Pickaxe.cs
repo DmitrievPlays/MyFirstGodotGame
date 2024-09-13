@@ -2,7 +2,12 @@ using Godot;
 
 public partial class Pickaxe : Resource
 {
-	public override string Name { get => base.Name; init => base.Name = value; }
-	public override string Description { get => base.Description; init => base.Description = value; }
-	public override float MaxPerStack { get => base.MaxPerStack; init => base.MaxPerStack = value; }
+	public Pickaxe()
+	{
+		Name = "Pickaxe";
+		Description = "You can mine some resources with that thing";
+		MaxPerStack = 1;
+		Icon = "res://textures/resources/pickaxe.png";
+		Type = ResourceTypes.Tool;
+	}
 }

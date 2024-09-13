@@ -1,8 +1,11 @@
-using Godot;
-
 public partial class Flashlight : Resource
 {
-	public override string Name { get => base.Name; init => base.Name = value; }
-	public override string Description { get => base.Description; init => base.Description = value; }
-	public override float MaxPerStack { get => base.MaxPerStack; init => base.MaxPerStack = value; }
+	public Flashlight()
+	{
+		Name = "Flashlight";
+		Description = "You can reveal the secrets of darkness with this thing";
+		MaxPerStack = 1;
+		Icon = "res://textures/resources/flashlight.png";
+		Type = ResourceTypes.Tool;
+	}
 }

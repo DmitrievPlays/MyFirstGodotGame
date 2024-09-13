@@ -1,21 +1,21 @@
 ﻿using Godot;
-using System.Collections.Generic;
 
 public partial class WaterExtractor : Machine
 {
-	public Inventory inventory;
+	public WaterExtractorInventory Inventory = new();
+	private CustomInventoryScreen screen;
 
-	public override void _Ready()
+	public override async void _Ready()
 	{
-		inventory = new Inventory(3);
-		inventory.AddItem(1, new GoldBar(), 3);
+		screen = GetNode<CustomInventoryScreen>("/root/MainScene/MainUI/CustomScreen");
+		var manager = ResourceManager.Instance;
+
+		Inventory.AddItem(await manager.GetResource(OriginalResources.ResourceType.GOLD), 5);
+		Inventory.AddItem(await manager.GetResource(OriginalResources.ResourceType.IRON), 15);
 	}
 
 	public override void OnInteract()
 	{
-		GD.Print("Water extractor clicked, it has " + inventory.GetMaxSlots() + " slots of inventory, and " + inventory.GetFreeSlots() + " free slots");
-		Node inventoryUI = GetTree().Root.FindChild("InventoryScreen", true, false);
-		
-		Node content = inventoryUI.FindChild("GridContainer");
+		screen.ShowScreen(Inventory, "Water extractor");
 	}
 }

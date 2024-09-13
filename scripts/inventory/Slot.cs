@@ -1,11 +1,18 @@
-﻿public class Slot
-{
-    private Resource Resource;
-    private int ItemAmount;
+﻿using Godot;
 
-    public Slot(Resource resource, int amount)
+public class Slot
+{
+    public Resource Resource { get; set; }
+    public int ItemAmount { get; set; }
+
+	public Slot(Resource resource, int amount)
     {
         Resource = resource;
         ItemAmount = amount;
+    }
+
+    public Slot()
+    {
+        
     }
 }

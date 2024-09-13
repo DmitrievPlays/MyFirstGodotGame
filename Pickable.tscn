@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dykeq8qjf1cpr"]
+
+[ext_resource type="Script" path="res://scripts/dropped/PickableItem.cs" id="1_1vynk"]
+[ext_resource type="Texture2D" uid="uid://d2x80mqvg6p8j" path="res://textures/resources/axe.png" id="2_ad3ol"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7r56e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aukwi"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bwwrn"]
+radius = 1.0
+
+[node name="Item" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 2)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_7r56e")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_1vynk")
+
+[node name="Icon" type="Sprite3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+pixel_size = 0.005
+billboard = 2
+texture = ExtResource("2_ad3ol")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.61, 0, 0, 0, 0.61, 0, 0, 0, 0.61, 0, 0, 0)
+shape = SubResource("SphereShape3D_aukwi")
+
+[node name="CollisionFixer" type="Area3D" parent="."]
+transform = Transform3D(0.725, 0, 0, 0, 0.725, 0, 0, 0, 0.725, 0, 0, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CollisionFixer"]
+shape = SubResource("SphereShape3D_bwwrn")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]
+[connection signal="body_entered" from="CollisionFixer" to="." method="OnBodyEntered"]

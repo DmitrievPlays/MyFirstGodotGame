@@ -3,151 +3,237 @@ using System;
 
 public partial class PlayerController : CharacterBody3D
 {
+	public PlayerInventory Inventory;
+	private PlayerInventoryScreen screen;
+
+	[Export]
+	public long player = 1;
+
+	private MultiplayerSynchronizer input;
+
 	[ExportCategory("Character")]
 	[Export]
-	float baseSpeed = 3.0f;
-	[Export]
-	float sprintSpeed = 6.0f;
-	[Export]
-	float crouchSpeed = 1.0f;
+	private float baseSpeed = 3.0f;
 
 	[Export]
-	float acceleration = 10.0f;
-	[Export]
-	float jumpVelocity = 4.5f;
-	[Export]
-	float mouseSensitivity = 0.005f;
-	[Export]
-	bool immobile = false;
+	private float sprintSpeed = 6.0f;
 
 	[Export]
-	Vector3 initial_facing_direction = Vector3.Zero;
+	private float crouchSpeed = 1.0f;
+
+	[Export]
+	private float acceleration = 10.0f;
+
+	[Export]
+	private float jumpVelocity = 4.5f;
+
+	[Export]
+	private float mouseSensitivity = 0.005f;
+
+	[Export]
+	private bool immobile = false;
+
+	[Export]
+	private Vector3 initial_facing_direction = Vector3.Zero;
 
 	[ExportGroup("Nodes")]
 	[Export]
-	Node3D HEAD ;
+	private Node3D HEAD;
+
 	[Export]
-	Camera3D CAMERA ;
+	private Camera3D CAMERA;
+
 	[Export]
-	AnimationPlayer HEADBOB_ANIMATION ;
+	private AnimationPlayer HEADBOB_ANIMATION;
+
 	[Export]
-	AnimationPlayer JUMP_ANIMATION ;
+	private AnimationPlayer JUMP_ANIMATION;
+
 	[Export]
-	AnimationPlayer CROUCH_ANIMATION ;
+	private AnimationPlayer CROUCH_ANIMATION;
+
 	[Export]
-	CollisionShape3D COLLISION_MESH ;
+	private CollisionShape3D COLLISION_MESH;
+
 	[Export]
-	ShapeCast3D CEILING_DETECTION ;
+	private ShapeCast3D CEILING_DETECTION;
 
 	[ExportGroup("Controls")]
 	[Export]
-	String JUMP = "jump" ;
+	private String JUMP = "jump";
+
 	[Export]
-	String LEFT = "move_left" ;
+	private String LEFT = "move_left";
+
 	[Export]
-	String RIGHT = "move_right" ;
+	private String RIGHT = "move_right";
+
 	[Export]
-	String FORWARD = "move_forward" ;
+	private String FORWARD = "move_forward";
+
 	[Export]
-	String BACKWARD = "move_backward" ;
+	private String BACKWARD = "move_backward";
+
 	[Export]
-	String PAUSE = "pause";
+	private String PAUSE = "pause";
+
 	[Export]
-	String CROUCH = "crouch" ;
+	private String CROUCH = "crouch";
+
 	[Export]
-	String SPRINT = "sprint" ;
+	private String SPRINT = "sprint";
 
 	[ExportGroup("Feature Settings")]
 	[Export]
-	bool jumpingEnabled = true ;
+	private bool jumpingEnabled = true;
+
 	[Export]
-	bool inAirMomentum = true ;
+	private bool inAirMomentum = true;
+
 	[Export]
-	bool motionSmoothing = true ;
+	private bool motionSmoothing = true;
+
 	[Export]
-	bool sprintEnabled = true ;
+	private bool sprintEnabled = true;
+
 	[Export]
-	bool crouchEnabled = true ;
+	private bool crouchEnabled = true;
+
 	[Export(PropertyHint.Enum, "Hold to Crouch,Toggle Crouch")]
-	public int crouchMode = 0 ;
+	public int crouchMode = 0;
+
 	[Export(PropertyHint.Enum, "Hold to Sprint,Toggle Sprint")]
-	public int sprintMode = 0 ;
+	public int sprintMode = 0;
+
 	[Export]
-	bool dynamicFOV = true ;
+	private bool dynamicFOV = true;
+
 	[Export]
-	bool continuousJumping = true ;
+	private bool continuousJumping = true;
+
 	[Export]
-	bool viewBobbing = true ;
+	private bool viewBobbing = true;
+
 	[Export]
-	bool jumpAnimation = true ;
+	private bool jumpAnimation = true;
 
 	// Member variables
-	float speed ;
-	float currentSpeed = 0.0f ;
+	private float speed;
+
+	private float currentSpeed = 0.0f;
 
 	// States: normal, crouching, sprinting
-	String state = "normal" ;
-	bool lowCeiling = false ; // This is for when the ceiling is too low and the player needs to crouch.
-	bool wasOnFloor = true ;
+	private String state = "normal";
+
+	private bool lowCeiling = false; // This is for when the ceiling is too low and the player needs to crouch.
+	private bool wasOnFloor = true;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = 9.8f;//ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
-    public override void _Ready()
-    {
+	public double timeInAir;
+
+	[Export]
+	public int health = 100;
+
+	[Export]
+	public int food = 100;
+
+	[Export]
+	public int water = 100;
+
+	public VBoxContainer playerStats;
+
+	public override async void _Ready()
+	{
+		playerStats = GetTree().Root.GetNode<VBoxContainer>("/root/MainScene/MainUI/PlayerStats/MarginContainer/VBoxContainer");
+
 		speed = baseSpeed;
-		Input.MouseMode = Input.MouseModeEnum.Captured ;
+		Input.MouseMode = Input.MouseModeEnum.Captured;
+
+		screen = GetNode<PlayerInventoryScreen>("/root/MainScene/MainUI/InventoryScreen");
+		var resourceManager = ResourceManager.Instance;
+		var inventoryManager = PlayerInventories.Instance;
+
+		Inventory = inventoryManager.GetPlayerInventory("Player01") as PlayerInventory;
+
+		Inventory.AddItem(await resourceManager.GetResource(OriginalResources.ResourceType.GOLD), 2);
+		Inventory.AddItem(await resourceManager.GetResource(OriginalResources.ResourceType.IRON), 28);
+		Inventory.AddItem(await resourceManager.GetResource(OriginalResources.ResourceType.GOLD), 9);
+		Inventory.AddItem(await resourceManager.GetResource(ModResources.ResourceType.FLASHLIGHT), 1);
+		Inventory.AddItem(await resourceManager.GetResource(OriginalResources.ResourceType.GOLD), 34);
+		Inventory.AddItem(await resourceManager.GetResource(ModResources.ResourceType.AXE), 2);
+
+		Inventory.RemoveItem(await resourceManager.GetResource(OriginalResources.ResourceType.GOLD), 30);
+
+		//((MultiplayerSynchronizer)FindChild("PlayerInput", true, false)).SetMultiplayerAuthority((int)player);
+		input = ((MultiplayerSynchronizer)FindChild("PlayerInput"));
+
+		if (player == Multiplayer.GetUniqueId())
+		{
+			//((Camera3D)GetTree().Root.FindChild("Camera3D", true, false)).Current = true;
+		}
 
 		// Set the camera rotation to whatever initial_facing_direction is, as long as it's not Vector3.zero
 		if (!initial_facing_direction.Equals(Vector3.Zero))
 		{
-			HEAD.RotationDegrees = initial_facing_direction ;
+			HEAD.RotationDegrees = initial_facing_direction;
 		}
-		
+
 		// HEADBOB_ANIMATION.Play("RESET");
 		// JUMP_ANIMATION.Play("RESET");
 		// CROUCH_ANIMATION.Play("RESET");
-    }
+	}
 
-    public override void _PhysicsProcess(double delta)
-    {
-		currentSpeed = Vector3.Zero.DistanceTo(GetRealVelocity()) ;
-		
-		Vector3 cv = GetRealVelocity() ;
-		
-		// Gravity
-		//  If the gravity changes during your game, uncomment this code
+	public override void _Process(double delta)
+	{
+		playerStats.GetNode<TextureProgressBar>("health/HBoxContainer/MarginContainer/value").Value = health;
+		playerStats.GetNode<TextureProgressBar>("water/HBoxContainer/MarginContainer/value").Value = water;
+		playerStats.GetNode<TextureProgressBar>("food/HBoxContainer/MarginContainer/value").Value = food;
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		currentSpeed = Vector3.Zero.DistanceTo(GetRealVelocity());
+
+		Vector3 cv = GetRealVelocity();
+
+		if (!IsOnFloor() && !IsOnWall())
+			timeInAir += delta;
+
 		// gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
-		HandleGravityAndJumping(delta) ;
+		HandleGravityAndJumping(delta);
 
-		Vector2 inputDir = immobile ? Vector2.Zero : Input.GetVector(LEFT, RIGHT, FORWARD, BACKWARD) ;
-		HandleMovement(delta, inputDir) ;
-		
-		lowCeiling = CEILING_DETECTION.IsColliding() ;
+		Vector2 inputDir = immobile ? Vector2.Zero : Input.GetVector(LEFT, RIGHT, FORWARD, BACKWARD);
+		HandleMovement(delta, inputDir);
+
+		lowCeiling = CEILING_DETECTION.IsColliding();
 		handleState(inputDir != Vector2.Zero);
 
-		if (dynamicFOV) { updateCameraFOV() ; }
-		
-		if (viewBobbing) { headbobAnimation(inputDir != Vector2.Zero) ; }
-		
+		if (dynamicFOV) { updateCameraFOV(); }
+
+		if (viewBobbing) { headbobAnimation(inputDir != Vector2.Zero); }
+
 		if (jumpAnimation)
 		{
 			if (!wasOnFloor && IsOnFloor()) // Just Landed
 			{
+				if (timeInAir > 2)
+					health -= (int)(timeInAir * 30);
+				timeInAir = 0;
 				//JUMP_ANIMATION.Play((GD.Randi() % 2) == 1 ? "land_left" : "land_right") ;
 			}
-			wasOnFloor = IsOnFloor() ; //This must always be at the end of physics_process
+			wasOnFloor = IsOnFloor(); //This must always be at the end of physics_process
 		}
-    }
+	}
 
-	void HandleGravityAndJumping(double delta)
+	private void HandleGravityAndJumping(double delta)
 	{
-		Vector3 currentVelocity = Velocity ;
+		Vector3 currentVelocity = Velocity;
 		if (!IsOnFloor())
 		{
-			currentVelocity.Y -= (float)(gravity * delta) ;
+			currentVelocity.Y -= (float)(gravity * delta);
 		}
-
 		else if (jumpingEnabled)
 		{
 			if (continuousJumping ? Input.IsActionPressed(JUMP) : Input.IsActionJustPressed(JUMP))
@@ -158,31 +244,30 @@ public partial class PlayerController : CharacterBody3D
 					{
 						//JUMP_ANIMATION.Play("jump") ;
 					}
-					currentVelocity.Y  += jumpVelocity ;
+					currentVelocity.Y += jumpVelocity;
 				}
 			}
-        }
-		Velocity = currentVelocity ;
+		}
+		Velocity = currentVelocity;
 	}
 
-	void HandleMovement(double delta, Vector2 inputDir)
+	private void HandleMovement(double delta, Vector2 inputDir)
 	{
-		Vector2 direction2D  = inputDir.Rotated(-HEAD.Rotation.Y) ;
-		Vector3 direction = new Vector3(direction2D.X, 0, direction2D.Y) ;
+		Vector2 direction2D = inputDir.Rotated(-HEAD.Rotation.Y);
+		Vector3 direction = new Vector3(direction2D.X, 0, direction2D.Y);
 		direction = direction.Normalized(); // ?
-		MoveAndSlide() ;
+		MoveAndSlide();
 
 		if (!inAirMomentum || IsOnFloor())
 		{
-			Vector3 currentVelocity = Vector3.Zero ;
-			currentVelocity.X = motionSmoothing ? Mathf.Lerp(Velocity.X, direction.X * speed, (float)(acceleration * delta)) : direction.X * speed ;
-			currentVelocity.Z = motionSmoothing ? Mathf.Lerp(Velocity.Z, direction.Z * speed, (float)(acceleration * delta)) : direction.Z * speed ;
-			Velocity = currentVelocity ;
+			Vector3 currentVelocity = Vector3.Zero;
+			currentVelocity.X = motionSmoothing ? Mathf.Lerp(Velocity.X, direction.X * speed, (float)(acceleration * delta)) : direction.X * speed;
+			currentVelocity.Z = motionSmoothing ? Mathf.Lerp(Velocity.Z, direction.Z * speed, (float)(acceleration * delta)) : direction.Z * speed;
+			Velocity = currentVelocity;
 		}
-
 	}
 
-	void handleState(bool moving)
+	private void handleState(bool moving)
 	{
 		if (sprintEnabled)
 		{
@@ -194,20 +279,20 @@ public partial class PlayerController : CharacterBody3D
 					{
 						if (state != "sprinting")
 						{
-							enterSprintState() ;				
+							enterSprintState();
 						}
 					}
 					else
 					{
 						if (state == "sprinting")
 						{
-							enterNormalState() ;
+							enterNormalState();
 						}
 					}
 				}
 				else if (state == "sprinting")
 				{
-					enterNormalState() ;
+					enterNormalState();
 				}
 			}
 			else if (sprintMode == 1)
@@ -216,25 +301,26 @@ public partial class PlayerController : CharacterBody3D
 				{
 					if (Input.IsActionPressed(SPRINT) && state == "normal")
 					{
-						enterSprintState() ;
+						enterSprintState();
 					}
 					if (Input.IsActionJustPressed(SPRINT))
 					{
-						switch(state)
+						switch (state)
 						{
 							case "normal":
 								enterSprintState();
 								break;
+
 							case "sprinting":
 							default:
 								enterNormalState();
-								break ;
+								break;
 						}
 					}
 				}
 				else if (state == "sprinting")
 				{
-					enterNormalState() ;
+					enterNormalState();
 				}
 			}
 		}
@@ -247,76 +333,77 @@ public partial class PlayerController : CharacterBody3D
 				{
 					if (state != "crouching")
 					{
-						enterCrouchState() ;
+						enterCrouchState();
 					}
 				}
 				else if (state == "crouching" && !CEILING_DETECTION.IsColliding())
 				{
-					enterNormalState() ;
+					enterNormalState();
 				}
 			}
 			else if (crouchMode == 1)
 			{
 				if (Input.IsActionJustPressed(CROUCH))
 				{
-						switch(state)
-						{
-							case "normal":
-								enterCrouchState();
-								break;
-							case "crouching":
-							default:
-								if (!CEILING_DETECTION.IsColliding())
-								{
-									enterNormalState();
-								}
-								break ;
-						}
+					switch (state)
+					{
+						case "normal":
+							enterCrouchState();
+							break;
+
+						case "crouching":
+						default:
+							if (!CEILING_DETECTION.IsColliding())
+							{
+								enterNormalState();
+							}
+							break;
+					}
 				}
 			}
 		}
 	}
 
-    private void enterNormalState()
-    {
-		String previousState = state ;
-		if (previousState == "crouching")
-		{
-			//CROUCH_ANIMATION.PlayBackwards("crouch") ;
-		}
-		state = "normal" ;
-		speed = baseSpeed ;
-    }
-
-    private void enterSprintState()
-    {
-		String previousState = state ;
-		if (previousState == "crouching")
-		{
-			//CROUCH_ANIMATION.PlayBackwards("crouch") ;
-		}
-		state = "sprinting" ;
-		speed = sprintSpeed ;
-    }
-
-    private void enterCrouchState()
-    {
-		String previousState = state ;
-		state = "crouching" ;
-		speed = crouchSpeed ;
-		//CROUCH_ANIMATION.Play("crouch") ;
-    }
-
-	void updateCameraFOV()
+	private void enterNormalState()
 	{
-		CAMERA.Fov = Mathf.Lerp(CAMERA.Fov, state == "sprinting" ? 85 : 75, 0.3f) ;
+		String previousState = state;
+		if (previousState == "crouching")
+		{
+			//CROUCH_ANIMATION.PlayBackwards("crouch") ;
+		}
+		state = "normal";
+		speed = baseSpeed;
 	}
 
-	void headbobAnimation(bool moving)
+	private void enterSprintState()
+	{
+		String previousState = state;
+		if (previousState == "crouching")
+		{
+			//CROUCH_ANIMATION.PlayBackwards("crouch") ;
+		}
+		state = "sprinting";
+		speed = sprintSpeed;
+	}
+
+	private void enterCrouchState()
+	{
+		String previousState = state;
+		state = "crouching";
+		speed = crouchSpeed;
+		//CROUCH_ANIMATION.Play("crouch") ;
+	}
+
+	private void updateCameraFOV()
+	{
+		CAMERA.Fov = Mathf.Lerp(CAMERA.Fov, state == "sprinting" ? 85 : 75, 0.3f);
+	}
+
+	private void headbobAnimation(bool moving)
 	{
 		if (moving && IsOnFloor())
 		{
-			String useHeadbobAnimation = (state == "normal" || state == "crouching") ? "walk" : "sprint" ;
+			String useHeadbobAnimation = (state == "normal" || state == "crouching") ? "walk" : "sprint";
 			//bool wasPlaying = HEADBOB_ANIMATION.CurrentAnimation == useHeadbobAnimation ;
 
 			//HEADBOB_ANIMATION.Play(useHeadbobAnimation, 0.25f) ;
@@ -330,29 +417,34 @@ public partial class PlayerController : CharacterBody3D
 		}
 	}
 
-    public override void _Process(double delta)
-    {
-		if (Input.IsActionJustPressed(PAUSE))
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("pause"))
 		{
-			Input.MouseMode = (Input.MouseMode == Input.MouseModeEnum.Captured) ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured ;
+			Input.MouseMode = (Input.MouseMode == Input.MouseModeEnum.Captured) ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured;
 		}
-    }
 
-    public override void _UnhandledInput(InputEvent @event)
-    {
-	    if (@event is InputEventMouseMotion && Input.MouseMode == Input.MouseModeEnum.Captured)
-	    {
-		    InputEventMouseMotion iemm = (InputEventMouseMotion)@event;
-		    Vector3 currentRotation = HEAD.Rotation;
-		    currentRotation.Y -= iemm.Relative.X * mouseSensitivity;
-		    currentRotation.X -= iemm.Relative.Y * mouseSensitivity;
-		    HEAD.Rotation = currentRotation;
-	    }
+		if (@event.IsActionPressed("debug"))
+		{
+			var temp = GetTree().Root.GetNode<Control>("/root/MainScene/MainUI/Debug");
+			temp.Visible = !temp.Visible;
+		}
+	}
 
-	    if (@event is InputEventMouseButton eventMouseButton
-	        && eventMouseButton.Pressed
-	        && eventMouseButton.ButtonIndex == MouseButton.Left)
-	    {
-	    }
-    }
+	public override void _UnhandledInput(InputEvent @event)
+	{
+		if (@event is InputEventMouseMotion && Input.MouseMode == Input.MouseModeEnum.Captured)
+		{
+			InputEventMouseMotion iemm = (InputEventMouseMotion)@event;
+			Vector3 currentRotation = HEAD.Rotation;
+			currentRotation.Y -= iemm.Relative.X * mouseSensitivity;
+			currentRotation.X -= iemm.Relative.Y * mouseSensitivity;
+			HEAD.Rotation = currentRotation;
+		}
+
+		if (Input.IsActionJustPressed("inventory"))
+		{
+			screen.ShowScreen(Inventory, this.HEAD);
+		}
+	}
 }

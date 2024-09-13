@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public partial class ResourceManager : Button
+public partial class ResourceManager : Node
 {
 	public static ResourceManager Instance { get; private set; }
 
@@ -11,12 +11,6 @@ public partial class ResourceManager : Button
 	{
 		Instance = this;
 		LoadResources();
-	}
-
-	public override void _Pressed()
-	{
-
-		GD.Print("load");
 	}
 
 	public void LoadResources()
@@ -37,14 +31,14 @@ public partial class ResourceManager : Button
 		((Label)GetTree().Root.FindChild("LoadedContent", true, false)).Text = "";
 		bool showingMods = false;
 
-		foreach (var item in Resources)
+		foreach (var item in ResourcesDatabase)
 		{
 			if (item.Key > 254 && !showingMods)
 			{
 				((Label)GetTree().Root.FindChild("LoadedContent", true, false)).Text += "\n ---- Mods ----\n";
 				showingMods = !showingMods;
 			}
-				
+
 			((Label)GetTree().Root.FindChild("LoadedContent", true, false)).Text += item.Key + ", " + item.Value.GetType().FullName + "\n";
 		}
 	}
@@ -53,7 +47,7 @@ public partial class ResourceManager : Button
 
 	public int ModResourceCap = 255; //Maximum items per mod
 
-	public Dictionary<int, Resource> Resources = new(); //Resources main dictionary
+	public Dictionary<int, Resource> ResourcesDatabase = new(); //Resources main dictionary
 	public Dictionary<string, int> Offsets = new(); //Resource ids offsets
 
 	public async Task AddResource(Enum @enum, Resource resource) // Adds a single resource from an original list or a mod
@@ -65,10 +59,26 @@ public partial class ResourceManager : Button
 
 		var offset = await GetOffset(@enum);
 
-		var success = Resources.TryAdd(id + offset, resource);
+		var success = ResourcesDatabase.TryAdd(id + offset, resource);
 
 		if (!success)
 			GD.PrintErr("Resource already exists!");
+		else
+			resource.Id = id + offset;
+	}
+
+	public async Task<int> GetResourceId(Enum @enum)
+	{
+		var id = Convert.ToInt32(@enum);
+		var offset = await GetOffset(@enum);
+
+		return id + offset;
+	}
+
+	public async Task<Resource> GetResource(Enum @enum)
+	{
+		var id = await GetResourceId(@enum);
+		return ResourcesDatabase[id];
 	}
 
 	public Task<int> GetOffset(Enum @enum)

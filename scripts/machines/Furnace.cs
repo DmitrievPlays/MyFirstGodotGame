@@ -1,20 +1,22 @@
 ﻿using Godot;
-using System.Collections.Generic;
 
 public partial class Furnace : Machine
 {
-	public Inventory inventory;
+	public FurnaceInventory Inventory = new();
+	private CustomInventoryScreen screen;
 
-	public override void _Ready()
+	public override async void _Ready()
 	{
-		inventory = new Inventory(6);
+		screen = GetNode<CustomInventoryScreen>("/root/MainScene/MainUI/CustomScreen");
+		var manager = ResourceManager.Instance;
+
+		Inventory.AddItem(await manager.GetResource(OriginalResources.ResourceType.GOLD), 5);
+		Inventory.AddItem(await manager.GetResource(OriginalResources.ResourceType.IRON), 15);
+		Inventory.AddItem(await manager.GetResource(OriginalResources.ResourceType.GOLD), 8);
 	}
 
 	public override void OnInteract()
 	{
-		GD.Print("Furnace clicked, it has " + inventory.GetMaxSlots() + " slots of inventory, and " + inventory.GetFreeSlots() + " free slots");
-		Node inventoryUI = GetTree().Root.FindChild("InventoryScreen", true, false);
-		
-		Node content = inventoryUI.FindChild("GridContainer");
+		screen.ShowScreen(Inventory, "Furnace");
 	}
 }

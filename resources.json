@@ -1,0 +1,28 @@
+{
+  "resources": [
+	{
+	  "description": "desc",
+	  "icon": "res://textures/resources/gold_ingot.png",
+	  "max_per_stack": 10,
+	  "name": "gold ingot"
+	},
+	{
+	  "description": "desc",
+	  "icon": "res://textures/resources/iron_ingot.png",
+	  "max_per_stack": 10,
+	  "name": "iron ingot"
+	},
+	{
+	  "description": "desc",
+	  "icon": "res://textures/resources/copper_ingot.png",
+	  "max_per_stack": 10,
+	  "name": "copper ingot"
+	},
+	{
+	  "description": "desc",
+	  "icon": "res://textures/resources/silicon.png",
+	  "max_per_stack": 10,
+	  "name": "silicon"
+	}
+  ]
+}
