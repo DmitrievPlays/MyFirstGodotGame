@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://db512y7hcndmv"]
+
+[node name="Lobby" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+current_tab = 0
+
+[node name="JOIN GAME" type="Panel" parent="Control/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/JOIN GAME"]
+layout_mode = 0
+offset_right = 336.0
+offset_bottom = 379.0
+theme_override_constants/separation = 12
+
+[node name="TextEdit" type="TextEdit" parent="Control/TabContainer/JOIN GAME/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "ip"
+
+[node name="TextEdit2" type="TextEdit" parent="Control/TabContainer/JOIN GAME/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "port"
+
+[node name="Button" type="Button" parent="Control/TabContainer/JOIN GAME/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "JOIN!"
+
+[node name="CREATE GAME" type="Panel" parent="Control/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Button" type="Button" parent="Control/TabContainer/CREATE GAME"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+text = "CREATE!"

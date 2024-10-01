@@ -21,7 +21,7 @@ public partial class PickableItem : RigidBody3D
 	public void Pickup(PlayerInventory player, int id, int amount)
 	{
 		var resource = ResourceManager.Instance.ResourcesDatabase[id];
-		var invManager = PlayerInventories.Instance.GetPlayerInventory("Player01");
+		var invManager = InventoryManager.Instance.GetPlayerInventory("Player01");
 		invManager.AddItem(resource, amount);
 		SoundManager.Instance.PlaySound("sonic-ring-sound", 1);
 		QueueFree();
@@ -32,7 +32,7 @@ public partial class PickableItem : RigidBody3D
 		if (body is PlayerController player)
 		{
 			var resource = ResourceManager.Instance.ResourcesDatabase[Id];
-			var invManager = PlayerInventories.Instance.GetPlayerInventory("Player01");
+			var invManager = InventoryManager.Instance.GetPlayerInventory("Player01");
 			invManager.AddItem(resource, Amount);
 			SoundManager.Instance.PlaySound("sonic-ring-sound", 1);
 			QueueFree();

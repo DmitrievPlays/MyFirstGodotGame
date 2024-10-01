@@ -1,7 +1,9 @@
-using CityBuilder.scripts.interfaces;
+﻿using System;
 using Godot;
 
-public abstract partial class Machine : StaticBody3D
+public abstract partial class Machine : StaticBody3D, IHavePermanentId
 {
-	public abstract void OnInteract();
+    public Guid Guid { get; set; } = Guid.NewGuid();
+
+    public abstract void OnInteract();
 }

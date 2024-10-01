@@ -11,11 +11,20 @@ config_version=5
 [application]
 
 config/name="CityBuilder"
-run/main_scene="res://main_scene.tscn"
+config/name_localized={
+"en": "Somefactory",
+"ru": "Заводье"
+}
+config/version="0.0.8"
+run/main_scene="res://scenes/LandingPage.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 boot_splash/bg_color=Color(0.17951, 0.181213, 0.230469, 1)
 boot_splash/image="res://textures/start_icon.png"
 boot_splash/fullsize=false
+
+[autoload]
+
+SettingsHandler="*res://scripts/settings_handler/SettingsHandler.cs"
 
 [display]
 
@@ -28,6 +37,13 @@ window/vsync/vsync_mode=2
 [dotnet]
 
 project/assembly_name="CityBuilder"
+
+[importer_defaults]
+
+csv_translation={
+"compress": true,
+"delimiter": 0
+}
 
 [input]
 
@@ -131,7 +147,7 @@ interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":56,"key_label":0,"unicode":56,"location":0,"echo":false,"script":null)
 ]
 }
-Throw={
+throw={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(120, 25),"global_position":Vector2(132, 82),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
@@ -141,6 +157,19 @@ debug={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194332,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+drop={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://translations/translations.en.translation", "res://translations/translations.ru.translation")
+locale/include_text_server_data=true
+locale/test="play"
+locale/locale_filter_mode=0
 
 [navigation]
 

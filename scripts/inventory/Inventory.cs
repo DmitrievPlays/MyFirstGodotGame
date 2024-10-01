@@ -1,72 +1,84 @@
 ﻿using Godot;
-using System.Collections.Generic;
+using System;
 using System.Collections.Immutable;
 
 public abstract class Inventory
 {
-	/// <summary>
-	/// Does this inventory uses custom slots?
-	/// </summary>
-	public abstract bool HasCustomSlots();
+    public delegate void NotifyEventHandler(object sender, EventArgs e);
 
-	public virtual void SwapSlots(Slot slot1, Slot slot2)
-	{
-		var tempResource = slot1.Resource;
-		var tempResourceAmount = slot1.ItemAmount;
+    public event NotifyEventHandler OnInventoryChanged;
 
-		slot1.Resource = slot2.Resource;
-		slot1.ItemAmount = slot2.ItemAmount;
+    public virtual void OnChanged(object sender, EventArgs e)
+    {
+        OnInventoryChanged?.Invoke(this, EventArgs.Empty);
+    }
 
-		slot2.Resource = tempResource;
-		slot2.ItemAmount = tempResourceAmount;
-	}
+    /// <summary>
+    /// Does this inventory uses custom slots?
+    /// </summary>
+    public abstract bool HasCustomSlots();
 
-	public abstract ImmutableDictionary<int, SlotProperties> getCustomSlotsProperties();
+    public static void SwapSlots(Slot slot1, Slot slot2)
+    {
+        var tempResource = slot1.Resource;
+        var tempResourceAmount = slot1.ItemAmount;
 
-	/// <summary>
-	/// Resource addition without selecting slot explicitly
-	/// </summary>
-	public abstract void AddItem(Resource resource, int amount);
+        slot1.Resource = slot2.Resource;
+        slot1.ItemAmount = slot2.ItemAmount;
 
-	/// <summary>
-	/// Resource removing without selecting slot explicitly
-	/// </summary>
-	public abstract void RemoveItem(Resource resource, int amount);
+        slot2.Resource = tempResource;
+        slot2.ItemAmount = tempResourceAmount;
+    }
 
-	/// <summary>
-	/// Resource addition to slot with index
-	/// </summary>
-	public abstract void AddItemTo(int amount, int index);
+    /// <summary>
+    /// Resource addition without selecting slot explicitly
+    /// </summary>
+    public abstract void AddItem(Resource resource, int amount);
 
-	/// <summary>
-	/// Resource removing from slot with index
-	/// </summary>
-	public abstract void RemoveItemFrom(int index);
+    /// <summary>
+    /// Resource removing without selecting slot explicitly
+    /// </summary>
+    public abstract void RemoveItem(Resource resource, int amount);
 
-	public virtual void DropItem(Slot slot, Vector3 head, Vector3 direction)
-	{
-		PickableItemsSpawner.Instance.SpawnPickable(slot, head, direction);
-	}
+    /// <summary>
+    /// Resource addition to slot with index
+    /// </summary>
+    public abstract void AddItem(Resource resource, int amount, int index);
 
-	/// <summary>
-	///  Get inventory slot by index
-	/// </summary>
-	public abstract int GetSlotByIndex(int index);
+    /// <summary>
+    /// Resource removing from slot with index
+    /// </summary>
+    public virtual void RemoveItemFrom(int slot)
+    {
+        GetItems()[slot].Resource = null;
+        GetItems()[slot].ItemAmount = 0;
+        // OnInventoryChanged?.Invoke(this, EventArgs.Empty);
+    }
 
-	/// <summary>
-	/// Can this inventory contain this type of resource, OVERALL
-	/// </summary>
-	public abstract bool CanContain(Resource resource);
+    public static void DropItem(Slot slot, Vector3 head, Vector3 direction)
+    {
+        PickableItemsSpawner.Instance.SpawnPickable(slot, head, direction);
+    }
 
-	/// <summary>
-	/// If there is at least one not fulfilled slot for the resource collected
-	/// </summary>
-	public abstract bool CanCollect(Resource resource);
+    /// <summary>
+    ///  Get inventory slot by index
+    /// </summary>
+    public abstract Slot GetSlotByIndex(int index);
 
-	/// <summary>
-	/// Can this inventory contain this type of resource, BUT IN THIS SLOT
-	/// </summary>
-	public abstract bool CanContain(Resource resource, Slot slot);
+    /// <summary>
+    /// Can this inventory contain this type of resource, OVERALL
+    /// </summary>
+    public abstract bool CanContain(Resource resource);
 
-	public abstract ImmutableDictionary<int, Slot> GetItems();
+    /// <summary>
+    /// If there is at least one not fulfilled slot for the resource collected
+    /// </summary>
+    public abstract bool CanCollect(Resource resource);
+
+    /// <summary>
+    /// Can this inventory contain this type of resource, BUT IN THIS SLOT
+    /// </summary>
+    public abstract bool CanContain(Resource resource, Slot slot);
+
+    public abstract ImmutableDictionary<int, Slot> GetItems();
 }

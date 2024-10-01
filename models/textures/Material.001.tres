@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c02o3355f0imb"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+roughness = 0.0
+emission_enabled = true
+emission = Color(1.92523e-07, 2.54919e-10, 0, 1)

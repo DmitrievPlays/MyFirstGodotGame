@@ -1,4 +1,4 @@
 ﻿public interface ICollector
 {
-	void CollectItem(WorldResource item);
+    void CollectItem(WorldResource item);
 }

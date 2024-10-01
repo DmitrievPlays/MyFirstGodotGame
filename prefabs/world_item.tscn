@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bh3hfdyjg0nux"]
+
+[node name="WorldItem" type="PanelContainer"]
+offset_right = 499.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+last_wrap_alignment = 3
+
+[node name="TextureRect" type="TextureRect" parent="HFlowContainer"]
+custom_minimum_size = Vector2(170, 96)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "WorldName_"
+
+[node name="Button" type="Button" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enter"
