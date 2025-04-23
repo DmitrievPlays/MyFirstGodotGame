@@ -1,24 +1,24 @@
-[gd_scene load_steps=41 format=3 uid="uid://b34lkb7bp1fdx"]
+[gd_scene load_steps=45 format=3 uid="uid://b34lkb7bp1fdx"]
 
-[ext_resource type="Script" path="res://scripts/LandingPage.cs" id="1_4hw3w"]
-[ext_resource type="Script" path="res://scripts/settings_handler/SettingsHandler.cs" id="2_110yu"]
-[ext_resource type="AudioStream" uid="uid://cc46yd6j3idgu" path="res://sounds/aria_math.mp3" id="3_mxt6k"]
+[ext_resource type="Script" uid="uid://3yiuawhbj35i" path="res://scripts/LandingPage.cs" id="1_4hw3w"]
+[ext_resource type="Script" uid="uid://dfdllfh7wrvgq" path="res://scenes/settings/SettingsHandler.cs" id="2_110yu"]
+[ext_resource type="AudioStream" uid="uid://be6juvebtk2a1" path="res://sounds/Tema_Ezhika.mp3" id="3_6s2ix"]
 [ext_resource type="Environment" uid="uid://dsn6veeoumgw6" path="res://environment.tres" id="4_o5oss"]
-[ext_resource type="Script" path="res://scripts/Rotator.cs" id="5_21hyu"]
 [ext_resource type="Theme" uid="uid://ct2c6000jdvam" path="res://MainTheme.tres" id="6_10mq0"]
-[ext_resource type="Script" path="res://scripts/SettingsScreen.cs" id="7_mhitf"]
 [ext_resource type="Texture2D" uid="uid://cnko744gtcdqb" path="res://textures/cross.png" id="8_20jgt"]
-[ext_resource type="Script" path="res://scripts/Fps.cs" id="9_cb0sy"]
+[ext_resource type="Script" uid="uid://ce06gg25getws" path="res://scripts/Fps.cs" id="9_cb0sy"]
 [ext_resource type="Texture2D" uid="uid://cmpvoh4udpbs2" path="res://textures/language.png" id="10_bk6so"]
-[ext_resource type="Script" path="res://scripts/LanguageChoice.cs" id="11_lxft8"]
+[ext_resource type="Script" uid="uid://dxmtngtxi1g7b" path="res://scripts/LanguageChoice.cs" id="11_lxft8"]
 [ext_resource type="ButtonGroup" uid="uid://bf40bn4go74on" path="res://language_button_group.tres" id="12_jubq2"]
-[ext_resource type="Script" path="res://scripts/interactables/IronOre.cs" id="13_a55m4"]
-[ext_resource type="Script" path="res://scripts/WorldSelect.cs" id="13_tobvw"]
+[ext_resource type="Script" uid="uid://btlr7ovmip801" path="res://scripts/interactables/IronOre.cs" id="13_a55m4"]
+[ext_resource type="Script" uid="uid://dmppvrib285yw" path="res://scripts/WorldSelect.cs" id="13_tobvw"]
 [ext_resource type="PackedScene" uid="uid://bjcsntl5sr3tq" path="res://models/tree.blend" id="14_bdena"]
 [ext_resource type="PackedScene" uid="uid://bh3hfdyjg0nux" path="res://prefabs/world_item.tscn" id="14_iypsp"]
 [ext_resource type="Texture2D" uid="uid://clvc87l6x4nvq" path="res://textures/start_icon.png" id="15_jdod0"]
 [ext_resource type="PackedScene" uid="uid://dtscn01cqndh6" path="res://models/crate.blend" id="15_rpoyn"]
 [ext_resource type="PackedScene" uid="uid://c3ga1sb5ywrvo" path="res://models/Y_enemy.blend" id="16_pqlsj"]
+[ext_resource type="Terrain3DAssets" uid="uid://brnm5bi4hjqmc" path="res://scenes/terrain_scene_assets.tres" id="20_lh6j7"]
+[ext_resource type="Shader" uid="uid://xcjjrx4dmt38" path="res://shaders/water.gdshader" id="21_lh6j7"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_0avh7"]
 auto_exposure_enabled = true
@@ -37,40 +37,21 @@ corner_detail = 4
 font_names = PackedStringArray("Bahnschrift")
 font_weight = 500
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7fkg"]
+bg_color = Color(0.190625, 0.190625, 0.190625, 0.396078)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkiis"]
 size = Vector2(1605, 909)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv3ts"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_580jh"]
-bg_color = Color(0.165625, 0.165625, 0.165625, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-corner_detail = 4
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm77e"]
-content_margin_top = 80.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_610vb"]
-bg_color = Color(0.175, 0.175, 0.175, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6s2ix"]
+bg_color = Color(0.11875, 0.11875, 0.11875, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6teqd"]
 content_margin_top = 12.0
 content_margin_bottom = 12.0
-bg_color = Color(0.1875, 0.1875, 0.1875, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojiks"]
-albedo_color = Color(0.143781, 0.334375, 0.13375, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_g4c0p"]
-material = SubResource("StandardMaterial3D_ojiks")
-size = Vector2(200, 200)
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oyiob"]
 bounce = 1.0
@@ -99,17 +80,88 @@ material = SubResource("StandardMaterial3D_q734l")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7tmap"]
 
-[node name="LandingPage" type="Node3D" node_paths=PackedStringArray("version", "mainCamera", "SettingsScreen")]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lh6j7"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8h3la"]
+width = 256
+height = 256
+seamless = true
+as_normal_map = true
+normalize = false
+noise = SubResource("FastNoiseLite_lh6j7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kp3gl"]
+render_priority = 0
+shader = ExtResource("21_lh6j7")
+shader_parameter/depth_fade_distance = 0.121
+shader_parameter/absorbance = 5.575
+shader_parameter/shallow_color = Color(0.365859, 0.552586, 0.696875, 1)
+shader_parameter/deep_color = Color(0.199697, 0.337018, 0.446875, 1)
+shader_parameter/foam_amount = 0.0
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_8h3la")
+shader_parameter/wave_scale = 21.08
+shader_parameter/height_scale = 0.27
+shader_parameter/wave_dir1 = Vector2(1, 0)
+shader_parameter/wave_dir2 = Vector2(0, 1)
+shader_parameter/wave_speed = 0.01
+
+[sub_resource type="QuadMesh" id="QuadMesh_h47w8"]
+material = SubResource("ShaderMaterial_kp3gl")
+size = Vector2(6, 7)
+subdivide_width = 20
+subdivide_depth = 20
+orientation = 1
+
+[sub_resource type="Gradient" id="Gradient_8h3la"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kp3gl"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_820bf"]
+seamless = true
+color_ramp = SubResource("Gradient_8h3la")
+noise = SubResource("FastNoiseLite_kp3gl")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_u0spm"]
+_shader_parameters = {
+&"blend_sharpness": 0.87,
+&"height_blending": true,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise3_scale": 0.225,
+&"noise_texture": SubResource("NoiseTexture2D_820bf"),
+&"vertex_normals_distance": 128.0
+}
+world_background = 0
+
+[node name="LandingPage" type="Node3D" node_paths=PackedStringArray("version", "mainCamera")]
 script = ExtResource("1_4hw3w")
 version = NodePath("UI/version")
 mainCamera = NodePath("Camera3D")
-SettingsScreen = NodePath("UI/SettingsScreen")
 
 [node name="SettingsHandler" type="ResourcePreloader" parent="."]
 script = ExtResource("2_110yu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_mxt6k")
+stream = ExtResource("3_6s2ix")
+volume_db = -15.0
 autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -117,16 +169,16 @@ environment = ExtResource("4_o5oss")
 camera_attributes = SubResource("CameraAttributesPractical_0avh7")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 0.813264, 0.581896, 0, -0.581896, 0.813264, 0, 2, 0)
 light_color = Color(1, 0.930625, 0.7, 1)
-light_bake_mode = 1
 shadow_enabled = true
+shadow_reverse_cull_face = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 1, 0)
+environment = ExtResource("4_o5oss")
 fov = 70.0
 far = 200.0
-script = ExtResource("5_21hyu")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -144,20 +196,20 @@ offset_left = 91.0
 offset_top = 60.0
 offset_right = 623.0
 offset_bottom = 188.0
-theme_override_font_sizes/font_size = 82
-text = "somefactory"
+theme_override_font_sizes/font_size = 106
+text = "Somefactory"
 vertical_alignment = 2
 
 [node name="version" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 91.0
-offset_top = 188.0
+offset_top = 175.0
 offset_right = 623.0
-offset_bottom = 254.0
+offset_bottom = 241.0
 theme_override_font_sizes/font_size = 42
 text = "0.0"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+[node name="MainView" type="HBoxContainer" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -165,7 +217,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/HBoxContainer"]
+[node name="Left" type="MarginContainer" parent="UI/MainView"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 90
@@ -173,30 +225,35 @@ theme_override_constants/margin_top = 500
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainView/Left"]
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_constants/separation = 15
 
-[node name="Play" type="Button" parent="UI/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="UI/MainView/Left/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("6_10mq0")
 theme_override_font_sizes/font_size = 42
 text = "play"
 
-[node name="Settings" type="Button" parent="UI/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="UI/MainView/Left/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("6_10mq0")
 theme_override_font_sizes/font_size = 42
 text = "settings"
 
-[node name="Quit" type="Button" parent="UI/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="UI/MainView/Left/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("6_10mq0")
 theme_override_font_sizes/font_size = 42
 text = "quit"
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/HBoxContainer"]
+[node name="Right" type="MarginContainer" parent="UI/MainView"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 40
@@ -204,13 +261,13 @@ theme_override_constants/margin_top = 110
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="UpdateInfo" type="PanelContainer" parent="UI/HBoxContainer/MarginContainer2"]
+[node name="UpdateInfo" type="PanelContainer" parent="UI/MainView/Right"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_0umy5")
 
-[node name="Label" type="Label" parent="UI/HBoxContainer/MarginContainer2/UpdateInfo"]
+[node name="Label" type="Label" parent="UI/MainView/Right/UpdateInfo"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -218,11 +275,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kg22s")
 text = "updates"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/HBoxContainer/MarginContainer2/UpdateInfo"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MainView/Right/UpdateInfo"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xds18")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/HBoxContainer/MarginContainer2/UpdateInfo/ScrollContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/MainView/Right/UpdateInfo/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -271,7 +328,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("6_10mq0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_k7fkg")
 script = ExtResource("11_lxft8")
 ButtonGroup = ExtResource("12_jubq2")
 ButtonLanguages = PackedStringArray("ru", "en")
@@ -296,131 +353,40 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/LanguageChoice/PanelContainer/MarginContainer"]
+[node name="Panel" type="VBoxContainer" parent="UI/LanguageChoice/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/LanguageChoice/PanelContainer/MarginContainer/Panel"]
+layout_mode = 2
+theme = ExtResource("6_10mq0")
+theme_override_font_sizes/font_size = 32
+text = "language"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LanguageChoice/PanelContainer/MarginContainer/Panel"]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="CheckBox" type="CheckBox" parent="UI/LanguageChoice/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="UI/LanguageChoice/PanelContainer/MarginContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("6_10mq0")
 button_group = ExtResource("12_jubq2")
 text = "Русский"
 
-[node name="CheckBox2" type="CheckBox" parent="UI/LanguageChoice/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="CheckBox2" type="CheckBox" parent="UI/LanguageChoice/PanelContainer/MarginContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme = ExtResource("6_10mq0")
 button_group = ExtResource("12_jubq2")
 text = "English"
 
-[node name="Button" type="Button" parent="UI/LanguageChoice/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="UI/LanguageChoice/PanelContainer/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("6_10mq0")
 theme_override_font_sizes/font_size = 20
 text = "OK"
-
-[node name="SettingsScreen" type="PanelContainer" parent="UI"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_nv3ts")
-script = ExtResource("7_mhitf")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/SettingsScreen"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
-
-[node name="PanelContainer" type="PanelContainer" parent="UI/SettingsScreen/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_580jh")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/SettingsScreen/MarginContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="Label" type="Label" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 48
-text = "settings"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cm77e")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="ViewDistance" type="PanelContainer" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("6_10mq0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance"]
-layout_mode = 2
-theme = ExtResource("6_10mq0")
-theme_override_constants/separation = 200
-
-[node name="Label" type="Label" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "view_distance"
-
-[node name="HSlider" type="HSlider" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme = ExtResource("6_10mq0")
-min_value = 250.0
-max_value = 2000.0
-step = 250.0
-value = 250.0
-tick_count = 8
-ticks_on_borders = true
-
-[node name="ShowFps" type="PanelContainer" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("6_10mq0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps"]
-layout_mode = 2
-theme = ExtResource("6_10mq0")
-theme_override_constants/separation = 200
-
-[node name="Label" type="Label" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "show_fps"
-
-[node name="CheckButton" type="CheckButton" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme = ExtResource("6_10mq0")
-
-[node name="TextureButton" type="TextureButton" parent="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-texture_normal = ExtResource("8_20jgt")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="WorldSelect" type="PanelContainer" parent="UI" node_paths=PackedStringArray("worldsHolder")]
 visible = false
@@ -430,18 +396,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_10mq0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6s2ix")
 script = ExtResource("13_tobvw")
 worldsHolder = NodePath("PanelContainer/HFlowContainer/ScrollContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/WorldSelect"]
+clip_contents = true
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_610vb")
+theme = ExtResource("6_10mq0")
 
 [node name="HFlowContainer" type="VBoxContainer" parent="UI/WorldSelect/PanelContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="UI/WorldSelect/PanelContainer/HFlowContainer"]
 layout_mode = 2
@@ -478,55 +448,6 @@ size_flags_vertical = 0
 texture_normal = ExtResource("8_20jgt")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Terrain" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain"]
-mesh = SubResource("PlaneMesh_g4c0p")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
-physics_material_override = SubResource("PhysicsMaterial_oyiob")
-contact_monitor = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_31ske")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("SphereMesh_14521")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="RigidBody3D"]
-root_path = NodePath("../../StaticBody3D2")
-replication_config = SubResource("SceneReplicationConfig_7ottv")
-
-[node name="RigidBody3D2" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
-physics_material_override = SubResource("PhysicsMaterial_oyiob")
-contact_monitor = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
-shape = SubResource("SphereShape3D_31ske")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
-mesh = SubResource("SphereMesh_14521")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="RigidBody3D2"]
-root_path = NodePath("../../StaticBody3D2")
-replication_config = SubResource("SceneReplicationConfig_7ottv")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5)
-script = ExtResource("13_a55m4")
-resourceAmount = 2.0
-timeToMineOne = 3
-
-[node name="IronOre" type="MeshInstance3D" parent="StaticBody3D2"]
-material_override = SubResource("StandardMaterial3D_12guu")
-mesh = SubResource("BoxMesh_0chn4")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-shape = SubResource("BoxShape3D_7tmap")
 
 [node name="TreeGroup" type="Node3D" parent="."]
 
@@ -585,13 +506,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6135, 0, 22.9246)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2238, 0, 39.8437)
 
 [node name="tree19" parent="TreeGroup" instance=ExtResource("14_bdena")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9525, 0, -6.07326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8322, 0, -0.159958)
 
 [node name="tree20" parent="TreeGroup" instance=ExtResource("14_bdena")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2123, 0, 7.9137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2123, 0, 10.195)
 
 [node name="tree21" parent="TreeGroup" instance=ExtResource("14_bdena")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7278, 0, -7.69011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7278, 0, -12.4293)
 
 [node name="tree22" parent="TreeGroup" instance=ExtResource("14_bdena")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2324, 0, 12.7901)
@@ -851,34 +772,96 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9559, 0, -55.8079)
 [node name="tree107" parent="TreeGroup" instance=ExtResource("14_bdena")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6883, 0, -48.2403)
 
-[node name="crate" parent="." instance=ExtResource("15_rpoyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92238, 0, -3.74969)
+[node name="WorldObjects" type="Node" parent="."]
 
-[node name="crate2" parent="." instance=ExtResource("15_rpoyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.44111, 0, -4.52017)
+[node name="crate" parent="WorldObjects" instance=ExtResource("15_rpoyn")]
+transform = Transform3D(0.667747, 0.0624421, -0.741765, -0.0417771, 0.998049, 0.0464079, 0.743215, 0, 0.669053, 1.66856, -0.252293, -4.27886)
 
-[node name="crate3" parent="." instance=ExtResource("15_rpoyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92238, 0.699966, -4.02961)
+[node name="crate2" parent="WorldObjects" instance=ExtResource("15_rpoyn")]
+transform = Transform3D(0.667747, 0.0624421, -0.741765, -0.0417771, 0.998049, 0.0464079, 0.743215, 0, 0.669053, 2.56145, -0.308155, -4.43667)
 
-[node name="Y_enemy" parent="." instance=ExtResource("16_pqlsj")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -3.54346, 1, -0.925513)
+[node name="crate3" parent="WorldObjects" instance=ExtResource("15_rpoyn")]
+transform = Transform3D(0.667747, 0.0624421, -0.741765, -0.0417771, 0.998049, 0.0464079, 0.743215, 0, 0.669053, 1.91991, 0.433317, -4.46615)
 
-[node name="Y_enemy2" parent="." instance=ExtResource("16_pqlsj")]
-transform = Transform3D(0.979705, 5.39144e-09, 0.200445, -5.34892e-09, 1, -7.53692e-10, -0.200445, -3.33768e-10, 0.979705, -5.14816, 1, 1.43084)
+[node name="Y_enemy" parent="WorldObjects" instance=ExtResource("16_pqlsj")]
+transform = Transform3D(0.226447, 0, -0.974024, 0, 1, 0, 0.974024, 0, 0.226447, -0.687695, 1, -5.11388)
+
+[node name="Y_enemy2" parent="WorldObjects" instance=ExtResource("16_pqlsj")]
+transform = Transform3D(0.804448, 3.85522e-09, -0.594023, -5.34892e-09, 1, -7.53692e-10, 0.594023, 3.78369e-09, 0.804448, -2.66542, 1, -3.11787)
+
+[node name="EasterEgg" type="Node3D" parent="WorldObjects"]
+transform = Transform3D(0.669053, 0, -0.743215, 0, 1, 0, 0.743215, 0, 0.669053, 5.55847, -0.598171, -3.59425)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="WorldObjects/EasterEgg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_oyiob")
+contact_monitor = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObjects/EasterEgg/RigidBody3D"]
+shape = SubResource("SphereShape3D_31ske")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldObjects/EasterEgg/RigidBody3D"]
+mesh = SubResource("SphereMesh_14521")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="WorldObjects/EasterEgg/RigidBody3D"]
+root_path = NodePath("../../StaticBody3D2")
+replication_config = SubResource("SceneReplicationConfig_7ottv")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="WorldObjects/EasterEgg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+physics_material_override = SubResource("PhysicsMaterial_oyiob")
+contact_monitor = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObjects/EasterEgg/RigidBody3D2"]
+shape = SubResource("SphereShape3D_31ske")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldObjects/EasterEgg/RigidBody3D2"]
+mesh = SubResource("SphereMesh_14521")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="WorldObjects/EasterEgg/RigidBody3D2"]
+root_path = NodePath("../../StaticBody3D2")
+replication_config = SubResource("SceneReplicationConfig_7ottv")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="WorldObjects/EasterEgg"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("13_a55m4")
+resourceAmount = 2.0
+timeToMineOne = 3
+
+[node name="IronOre" type="MeshInstance3D" parent="WorldObjects/EasterEgg/StaticBody3D2"]
+material_override = SubResource("StandardMaterial3D_12guu")
+mesh = SubResource("BoxMesh_0chn4")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObjects/EasterEgg/StaticBody3D2"]
+shape = SubResource("BoxShape3D_7tmap")
+
+[node name="Water" type="MeshInstance3D" parent="WorldObjects"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 16.4253, -1.08733, -6.51245)
+mesh = SubResource("QuadMesh_h47w8")
+skeleton = NodePath("../..")
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://terrain_data/terrain_landing"
+material = SubResource("Terrain3DMaterial_u0spm")
+assets = ExtResource("20_lh6j7")
+mesh_lods = 2
+mesh_size = 36
+top_level = true
+metadata/_edit_lock_ = true
 
 [connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="play"]
-[connection signal="pressed" from="UI/HBoxContainer/MarginContainer/VBoxContainer/Play" to="UI/WorldSelect" method="show"]
-[connection signal="pressed" from="UI/HBoxContainer/MarginContainer/VBoxContainer/Settings" to="." method="Settings"]
-[connection signal="pressed" from="UI/HBoxContainer/MarginContainer/VBoxContainer/Quit" to="." method="Quit"]
+[connection signal="pressed" from="UI/MainView/Left/VBoxContainer/Play" to="UI/WorldSelect" method="show"]
+[connection signal="pressed" from="UI/MainView/Left/VBoxContainer/Settings" to="." method="Settings"]
+[connection signal="pressed" from="UI/MainView/Left/VBoxContainer/Quit" to="." method="Quit"]
 [connection signal="pressed" from="UI/Language" to="UI/LanguageChoice" method="show"]
 [connection signal="input_event" from="UI/LanguageChoice/Area2D" to="UI/LanguageChoice" method="InputEvent"]
-[connection signal="pressed" from="UI/LanguageChoice/PanelContainer/MarginContainer/VBoxContainer/Button" to="UI/LanguageChoice" method="hide"]
-[connection signal="pressed" from="UI/SettingsScreen/MarginContainer/PanelContainer/MarginContainer/TextureButton" to="UI/SettingsScreen" method="Close"]
+[connection signal="pressed" from="UI/LanguageChoice/PanelContainer/MarginContainer/Panel/VBoxContainer/Button" to="UI/LanguageChoice" method="hide"]
 [connection signal="pressed" from="UI/WorldSelect/PanelContainer/HFlowContainer/ScrollContainer/WorldItem/HFlowContainer/Button" to="." method="Play"]
 [connection signal="pressed" from="UI/WorldSelect/PanelContainer/TextureButton" to="UI/WorldSelect" method="hide"]
-[connection signal="body_entered" from="RigidBody3D" to="RigidBody3D" method="OnCollide"]
-[connection signal="body_entered" from="RigidBody3D2" to="RigidBody3D2" method="OnCollide"]
-[connection signal="mouse_entered" from="StaticBody3D2" to="StaticBody3D2" method="_MouseEnter"]
-[connection signal="mouse_exited" from="StaticBody3D2" to="StaticBody3D2" method="_MouseExit"]
+[connection signal="body_entered" from="WorldObjects/EasterEgg/RigidBody3D" to="WorldObjects/EasterEgg/RigidBody3D" method="OnCollide"]
+[connection signal="body_entered" from="WorldObjects/EasterEgg/RigidBody3D2" to="WorldObjects/EasterEgg/RigidBody3D2" method="OnCollide"]
+[connection signal="mouse_entered" from="WorldObjects/EasterEgg/StaticBody3D2" to="WorldObjects/EasterEgg/StaticBody3D2" method="_MouseEnter"]
+[connection signal="mouse_exited" from="WorldObjects/EasterEgg/StaticBody3D2" to="WorldObjects/EasterEgg/StaticBody3D2" method="_MouseExit"]
 
 [editable path="UI/WorldSelect/PanelContainer/HFlowContainer/ScrollContainer/WorldItem"]

@@ -15,8 +15,8 @@ public partial class ElectricitySolverService : ResourcePreloader
 
     public void CreatePowerLine(PowerNode node)
     {
-        PowerLine line = new(node);
-        _powerLines.Add(1, line);
+        //PowerLine line = new(node);
+        //_powerLines.Add(1, line);
     }
 
     public void JoinLines(PowerLine line)

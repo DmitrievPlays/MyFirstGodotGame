@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bybcki40abd7d"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://8ypd55rh4htl" path="res://scenes/terrain_scene_mat.tres" id="1_2ub8u"]
+[ext_resource type="Terrain3DAssets" uid="uid://brnm5bi4hjqmc" path="res://scenes/terrain_scene_assets.tres" id="2_qa721"]
+[ext_resource type="Script" uid="uid://vc3ja1idcrt3" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="3_hhth8"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="4_ss1y7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eb1aa"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.500003, -1.81001e-06, 0, -3.61999e-06, 1, -0.500003, 0.866023, 3.135e-06, 0, 0, 0)
+light_color = Color(0.80049, 0.803125, 0.592305, 1)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_max_distance = 345.0
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://terrain_data/new"
+material = ExtResource("1_2ub8u")
+assets = ExtResource("2_qa721")
+save_16_bit = true
+mesh_lods = 10
+mesh_size = 8
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Basic FPS Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.315, 23.5679, 6.57264)
+script = ExtResource("3_hhth8")
+SPEED = 50.0
+SPRINT_ACCEL = 25.0
+metadata/_custom_type_script = ExtResource("3_hhth8")
+
+[node name="Head" parent="Basic FPS Player" instance=ExtResource("4_ss1y7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player"]
+shape = SubResource("CapsuleShape3D_eb1aa")

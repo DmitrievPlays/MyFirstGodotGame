@@ -1,66 +1,60 @@
-using Godot;
-using System;
+﻿using Godot;
 
 public partial class GameServer : Node
 {
-	private ENetMultiplayerPeer peer;
+    private ENetMultiplayerPeer peer;
 
-	public override void _Ready()
-	{
-		//GetTree().Paused = true;
+    public override void _Ready()
+    {
+        peer = new ENetMultiplayerPeer();
+    }
 
-		if (DisplayServer.GetName() == "headless")
-		{
-			GD.Print("Server is starting automatically...");
-			CallDeferred(MethodName.OnHostPressed);
-		}
+    public void OnCreateServerPressed()
+    {
+        peer.CreateServer(2025, 4);
 
-		peer = new ENetMultiplayerPeer();
+        if (peer.GetConnectionStatus() == MultiplayerPeer.ConnectionStatus.Disconnected)
+        {
+            GD.PrintErr("Failed to start multiplayer server!");
+            return;
+        }
+        Multiplayer.MultiplayerPeer = peer;
+        GD.Print("Server started on port: 2025");
+    }
 
-		//Multiplayer.MultiplayerPeer = peer;
-	}
+    public void OnConnectPressed()
+    {
+        var ip = ((TextEdit)GetTree().Root.FindChild("ip", true, false)).Text;
+        var port = int.Parse(Mathf.RoundToInt(((SpinBox)GetTree().Root.FindChild("port", true, false)).Value).ToString());
+        if (ip == "")
+            return;
 
-	public void OnHostPressed()
-	{
-		var peer = new ENetMultiplayerPeer();
-		peer.CreateServer(2024, 16);
+        peer.CreateClient(ip, port);
 
-		if(peer.GetConnectionStatus() == MultiplayerPeer.ConnectionStatus.Disconnected)
-		{
-			OS.Alert("Failed to start multiplayer server!");
-			return;
-		}
-		Multiplayer.MultiplayerPeer = peer;
-		StartGame();
-	}
+        if (peer.GetConnectionStatus() == MultiplayerPeer.ConnectionStatus.Disconnected)
+        {
+            GD.PrintErr("Failed to start multiplayer client");
+            return;
+        }
+        Multiplayer.MultiplayerPeer = peer;
+        GD.Print("Client connected to: " + ip + ":" + port);
+    }
 
-	public void OnConnectPressed()
-	{
-		var txt = ((TextEdit)GetTree().Root.FindChild("ip", true, false)).Text;
-		var port = int.Parse(Mathf.RoundToInt(((SpinBox)GetTree().Root.FindChild("port", true, false)).Value).ToString());
-		if(txt == "")
-		{
-			OS.Alert("No remote to connect to");
-			return;
-		}
+    public override void _Process(double delta)
+    {
+        // Handle incoming packets
+        if (peer.GetConnectionStatus() == MultiplayerPeer.ConnectionStatus.Connected)
+        {
+            // Process network events
+            // e.g., handle player movement, game state updates, etc.
+        }
+    }
 
-		var peer = new ENetMultiplayerPeer();
-		OS.Alert("Connecting to " + txt + ":" + port);
-		peer.CreateClient(txt, port);
-
-		if(peer.GetConnectionStatus() == MultiplayerPeer.ConnectionStatus.Disconnected)
-		{
-			OS.Alert("Failed to start multiplayer client");
-			return;
-		}
-		Multiplayer.MultiplayerPeer = peer;
-		StartGame();
-	}
-
-
-	public void StartGame()
-	{
-		GetTree().Root.FindChild("ConnectUI", true, false).Set(Control.PropertyName.Visible, false);
-		GetTree().Paused = false;
-	}
+    public override void _Notification(int what)
+    {
+        if (what == NotificationWMCloseRequest)
+        {
+            ExitDialog.Instance.ShowDialog(GetTree().Root);
+        }
+    }
 }

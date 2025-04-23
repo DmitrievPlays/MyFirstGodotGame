@@ -11,8 +11,6 @@ public partial class SoundManager : Node
     {
         Instance = this;
         _audioPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
-
-        PlaySound("amongas", 1.2f);
     }
 
     public void PlaySound(string name, float pitch)

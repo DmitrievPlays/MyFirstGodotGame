@@ -6,6 +6,6 @@ public class PowerLine
 
     public PowerLine(PowerNode node)
     {
-        _nodes.Add(node);
+       // _nodes.Add(node);
     }
 }

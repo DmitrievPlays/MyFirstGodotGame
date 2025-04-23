@@ -28,7 +28,7 @@ public partial class CustomInventoryScreen : PanelContainer
 
         _screenNameNode = GetNode<Label>("ScreenName");
 
-        _inventoryItem = ResourceLoader.Load<PackedScene>("res://InventoryItem.tscn");
+        _inventoryItem = ResourceLoader.Load<PackedScene>("res://prefabs/InventoryItem.tscn");
         _tooltip = (Tooltip)GetTree().Root.FindChild("Tooltip", true, false);
         _collisionBoxSize = Size;
 
@@ -59,9 +59,9 @@ public partial class CustomInventoryScreen : PanelContainer
             itemTemplate.Slot = _inventorySlots[i];
             itemTemplate.SlotID = i;
 
-            if (_inventorySlots[i].Resource is not null)
+            if (_inventorySlots[i].BaseItem is not null)
             {
-                ((TextureRect)itemTemplate.GetNode("Margin/Icon")).Texture = GD.Load(_inventorySlots[i].Resource.Icon) as Texture2D;
+                ((TextureRect)itemTemplate.GetNode("Margin/Icon")).Texture = GD.Load(_inventorySlots[i].BaseItem.Icon) as Texture2D;
                 ((Label)itemTemplate.GetNode("Margin/Amount")).Text = _inventorySlots[i].ItemAmount.ToString();
             }
             else

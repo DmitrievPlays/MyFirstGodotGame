@@ -1,0 +1,16 @@
+<Project Sdk="Godot.NET.Sdk/4.4.0-rc.1">
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="System.Reactive" Version="6.0.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="models\" />
+    </ItemGroup>
+</Project>

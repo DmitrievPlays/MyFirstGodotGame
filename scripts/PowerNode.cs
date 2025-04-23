@@ -12,8 +12,8 @@ public partial class PowerNode : MeshInstance3D, IElectricModule
 
     public override void _Ready()
     {
-        _solverService = ElectricitySolverService.Instance;
-        _solverService.CreatePowerLine(this);
+        //_solverService = ElectricitySolverService.Instance;
+        //_solverService.CreatePowerLine(this);
     }
 
     public void Interact()

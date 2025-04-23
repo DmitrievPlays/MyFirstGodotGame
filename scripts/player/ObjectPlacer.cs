@@ -34,7 +34,7 @@ public partial class ObjectPlacer : Control
         //}
     }
 
-    public void Activate(Resource placable)
+    public void Activate(BaseItem placable)
     {
         _mainTitle.Text = @$"Placing {placable.Name}";
         Show();

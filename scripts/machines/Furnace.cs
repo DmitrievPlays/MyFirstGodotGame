@@ -29,7 +29,7 @@ public partial class Furnace : Machine
         var inventoryManager = InventoryManager.Instance;
         Inventory = inventoryManager.GetBuildingInventory(inventoryTemporaryName) as FurnaceInventory;
 
-        screenPrefab = ResourceLoader.Load<PackedScene>("res://custom_screen.tscn");
+        screenPrefab = ResourceLoader.Load<PackedScene>("res://prefabs/custom_screen.tscn");
 
         particles = GetNode<GpuParticles3D>("Smoke");
         var manager = ResourceManager.Instance;
@@ -46,13 +46,13 @@ public partial class Furnace : Machine
     {
         GD.Print("Inventory changed");
 
-        if (Inventory.GetItems()[fireSlot].Resource is Coal && Inventory.GetItems()[fireSlot].ItemAmount > 0)
-        {
-            if (!isBurning)
-                MakeThisShitBurn();
-            isBurning = true;
-            particles.CallDeferred("set_emitting", true);
-        }
+        //if (Inventory.GetItems()[fireSlot].BaseItem is Coal && Inventory.GetItems()[fireSlot].ItemAmount > 0)
+        //{
+        //    if (!isBurning)
+        //        MakeThisShitBurn();
+        //    isBurning = true;
+        //    particles.CallDeferred("set_emitting", true);
+        //}
         GD.Print(Inventory.GetItems()[fireSlot].ItemAmount);
         if (Inventory.GetItems()[fireSlot].ItemAmount == 0)
         {
@@ -83,8 +83,8 @@ public partial class Furnace : Machine
     {
         Slot slot = Inventory.GetSlotByIndex(fireSlot);
 
-        if (slot.Resource is not null)
-            Inventory.RemoveItem(slot.Resource, 1);
+        if (slot.BaseItem is not null)
+            Inventory.RemoveItem(slot.BaseItem, 1);
     }
 
     public override void OnInteract()

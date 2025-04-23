@@ -24,7 +24,7 @@ public partial class CoalGenerator : Machine
         var inventoryManager = InventoryManager.Instance;
         Inventory = inventoryManager.GetBuildingInventory(inventoryTemporaryName) as CoalGeneratorInventory;
 
-        _screenPrefab = ResourceLoader.Load<PackedScene>("res://custom_screen.tscn");
+        _screenPrefab = ResourceLoader.Load<PackedScene>("res://prefabs/custom_screen.tscn");
 
         _particles = GetNode<GpuParticles3D>("Smoke");
         var manager = ResourceManager.Instance;
@@ -64,18 +64,18 @@ public partial class CoalGenerator : Machine
     private void StartBurning()
     {
         Slot slot = Inventory.GetSlotByIndex(1);
-        if (slot.Resource is Coal && slot.ItemAmount > 0)
-        {
-            _isBurning = true;
-            _particles.CallDeferred("set_emitting", true);
+        //if (slot.Resource is Coal && slot.ItemAmount > 0)
+        //{
+        //    _isBurning = true;
+        //    _particles.CallDeferred("set_emitting", true);
 
-            var audioStream = (AudioStream)ResourceLoader.Load(@$"res://sounds/coal_generator/coal_generator_start.mp3");
-            _audio.Stream = audioStream;
-            _audio.Play();
-            _audio.Finished += PlayContinuously;
+        //    var audioStream = (AudioStream)ResourceLoader.Load(@$"res://sounds/coal_generator/coal_generator_start.mp3");
+        //    _audio.Stream = audioStream;
+        //    _audio.Play();
+        //    _audio.Finished += PlayContinuously;
 
-            UpdateState();
-        }
+        //    UpdateState();
+        //}
     }
 
     private void StopBurning()
@@ -106,11 +106,11 @@ public partial class CoalGenerator : Machine
             return;
         }
 
-        if (slot.Resource is Coal && slot.ItemAmount > 0)
-        {
-            Inventory.RemoveItem(slot.Resource, 1);
-            await Task.Delay((int)(_burnTime * 1000));
-            UpdateState();
-        }
+        //if (slot.Resource is Coal && slot.ItemAmount > 0)
+        //{
+        //    Inventory.RemoveItem(slot.Resource, 1);
+        //    await Task.Delay((int)(_burnTime * 1000));
+        //    UpdateState();
+        //}
     }
 }

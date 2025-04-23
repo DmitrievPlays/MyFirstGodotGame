@@ -1,0 +1,158 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmgx5xk545vpc"]
+
+[ext_resource type="Script" uid="uid://bn4paueugqrmb" path="res://scenes/settings/SettingsScreen.cs" id="1_qrqa7"]
+[ext_resource type="Theme" uid="uid://ct2c6000jdvam" path="res://MainTheme.tres" id="2_pt01f"]
+[ext_resource type="Texture2D" uid="uid://cnko744gtcdqb" path="res://textures/cross.png" id="3_n20dh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv3ts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm77e"]
+content_margin_top = 80.0
+
+[node name="SettingsScreen" type="PanelContainer" node_paths=PackedStringArray("showFps", "far", "antialiasing")]
+z_index = 9
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nv3ts")
+script = ExtResource("1_qrqa7")
+showFps = NodePath("MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps/HBoxContainer/ShowFPS")
+far = NodePath("MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer/Far")
+antialiasing = NodePath("MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Antialiasing/HBoxContainer/Antialiasing")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_pt01f")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "settings"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cm77e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ViewDistance" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_pt01f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance"]
+layout_mode = 2
+theme = ExtResource("2_pt01f")
+theme_override_constants/separation = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "view_distance"
+
+[node name="ViewDistanceLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "(0m)"
+
+[node name="Far" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme = ExtResource("2_pt01f")
+min_value = 250.0
+max_value = 2000.0
+step = 250.0
+value = 250.0
+tick_count = 8
+ticks_on_borders = true
+
+[node name="ShowFps" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_pt01f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps"]
+layout_mode = 2
+theme = ExtResource("2_pt01f")
+theme_override_constants/separation = 200
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "show_fps"
+
+[node name="ShowFPS" type="CheckButton" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("2_pt01f")
+
+[node name="Antialiasing" type="PanelContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_pt01f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Antialiasing"]
+layout_mode = 2
+theme = ExtResource("2_pt01f")
+theme_override_constants/separation = 200
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Antialiasing/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "antialiasing"
+
+[node name="Antialiasing" type="OptionButton" parent="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Antialiasing/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+item_count = 3
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "2x"
+popup/item_1/id = 1
+popup/item_2/text = "4x"
+popup/item_2/id = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("2_pt01f")
+texture_normal = ExtResource("3_n20dh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="value_changed" from="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ViewDistance/HBoxContainer/Far" to="." method="OnViewDistanceChanged"]
+[connection signal="toggled" from="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/ShowFps/HBoxContainer/ShowFPS" to="." method="OnShowFpsChanged"]
+[connection signal="item_selected" from="MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Antialiasing/HBoxContainer/Antialiasing" to="." method="OnAntialiasingChanged"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/TextureButton" to="." method="Close"]

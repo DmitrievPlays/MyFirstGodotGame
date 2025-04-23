@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs6qr27idougo"]
+
+[ext_resource type="Script" uid="uid://dq5hig0emubbi" path="res://scenes/pause/PauseScreen.cs" id="1_d6lk2"]
+[ext_resource type="Theme" uid="uid://ct2c6000jdvam" path="res://MainTheme.tres" id="2_dtyhr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6lk2"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="PauseMenu" type="PanelContainer" node_paths=PackedStringArray("version")]
+process_mode = 3
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6lk2")
+script = ExtResource("1_d6lk2")
+version = NodePath("version")
+
+[node name="Content" type="Panel" parent="."]
+custom_minimum_size = Vector2(250, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_dtyhr")
+
+[node name="MarginContainer" type="MarginContainer" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VFlowContainer" type="VBoxContainer" parent="Content/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="Content/MarginContainer/VFlowContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="Content/MarginContainer/VFlowContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dtyhr")
+text = "resume"
+
+[node name="Lan" type="Button" parent="Content/MarginContainer/VFlowContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dtyhr")
+text = "LAN"
+
+[node name="Settings" type="Button" parent="Content/MarginContainer/VFlowContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dtyhr")
+text = "settings"
+
+[node name="Exit" type="Button" parent="Content/MarginContainer/VFlowContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_dtyhr")
+text = "save_and_exit"
+
+[node name="version" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "0.0"
+
+[connection signal="pressed" from="Content/MarginContainer/VFlowContainer/Resume" to="." method="Resume"]
+[connection signal="pressed" from="Content/MarginContainer/VFlowContainer/Lan" to="." method="OpenLanSession"]
+[connection signal="pressed" from="Content/MarginContainer/VFlowContainer/Settings" to="." method="OpenSettings"]
+[connection signal="pressed" from="Content/MarginContainer/VFlowContainer/Exit" to="." method="SaveAndExit"]

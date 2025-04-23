@@ -37,7 +37,7 @@ public partial class FurnaceInventoryScreen : Control
 
             if (itemsToShow.ContainsKey(i) && itemsToShow[i].ItemAmount > 0)
             {
-                ((TextureRect)itemTemplate.GetNode("Margin/Icon")).Texture = GD.Load(itemsToShow[i].Resource.Icon) as Texture2D;
+                ((TextureRect)itemTemplate.GetNode("Margin/Icon")).Texture = GD.Load(itemsToShow[i].BaseItem.Icon) as Texture2D;
                 ((Label)itemTemplate.GetNode("Margin/Amount")).Text = itemsToShow[i].ItemAmount.ToString();
             }
             content.AddChild(itemTemplate);

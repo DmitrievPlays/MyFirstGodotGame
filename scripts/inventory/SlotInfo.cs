@@ -18,12 +18,12 @@ public partial class SlotInfo : Button
 
     public void OnMouseEnter()
     {
-        if (Slot?.Resource is null)
+        if (Slot?.BaseItem is null)
             return;
         tooltipEl.Visible = true;
-        ((Label)tooltipEl.FindChild("name")).Text = Slot.Resource.Name;
-        ((Label)tooltipEl.FindChild("description")).Text = Slot.Resource.Description;
-        ((Label)tooltipEl.FindChild("id")).Text = "ID: " + Slot.Resource.Id.ToString();
+        ((Label)tooltipEl.FindChild("name")).Text = Slot.BaseItem.Name;
+        ((Label)tooltipEl.FindChild("description")).Text = Slot.BaseItem.Description;
+        ((Label)tooltipEl.FindChild("id")).Text = "ID: " + Slot.BaseItem.Id.ToString();
         ((Label)tooltipEl.FindChild("slot_id")).Text = "SLOT_ID: " + SlotID.ToString();
     }
 

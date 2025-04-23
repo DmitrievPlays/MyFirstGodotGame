@@ -25,12 +25,12 @@ public partial class LandingPage : Node3D
 
     public void Play()
     {
-        GetTree().ChangeSceneToFile("res://scenes/main_scene.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/loading_screen.tscn");
     }
 
     public void Settings()
     {
-        SettingsScreen.Show();
+        SettingsHandler.Instance.OpenSettingsScreen(GetTree().Root);
     }
 
     public void Quit()

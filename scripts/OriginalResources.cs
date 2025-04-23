@@ -1,14 +1,16 @@
 ﻿public class OriginalResources //MOD, BUT IT'S ORIGINAL
 {
-    public Dictionary<ResourceType, Resource> items = new Dictionary<ResourceType, Resource>() {
-        { ResourceType.IRON, new IronBar() },
-        { ResourceType.GOLD, new GoldBar() },
-        { ResourceType.COPPER, new CopperBar() },
-        { ResourceType.SILICON, new Silicon() },
-        { ResourceType.COAL, new Coal() },
-        { ResourceType.WATER_CAN, new Canister() },
-        { ResourceType.STREETLIGHT, new StreetLight() },
-        { ResourceType.WIRE, new Wire() },
+    public Dictionary<ResourceType, BaseItem> items = new()
+    {
+        //{ ResourceType.IRON, new IronBar() },
+        //{ ResourceType.GOLD, new GoldBar() },
+        //{ ResourceType.COPPER, new CopperBar() },
+        //{ ResourceType.SILICON, new Silicon() },
+        //{ ResourceType.COAL, new Coal() },
+        //{ ResourceType.WATER_CAN, new Canister() },
+        //{ ResourceType.STREETLIGHT, new StreetLight() },
+        //{ ResourceType.WIRE, new Wire() },
+        //{ ResourceType.GUN, new Gun() },
     };
 
     public enum ResourceType
@@ -21,5 +23,6 @@
         WATER_CAN,
         STREETLIGHT,
         WIRE,
+        GUN,
     }
 }

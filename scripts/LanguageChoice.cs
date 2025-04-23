@@ -29,14 +29,13 @@ public partial class LanguageChoice : PanelContainer
         {
             TranslationServer.SetLocale("ru");
             SettingsHandler.Instance.PutSetting("language", "ru");
-            GD.Print("pressed 0");
         }
         else if (id == 1)
         {
             TranslationServer.SetLocale("en");
             SettingsHandler.Instance.PutSetting("language", "en");
-            GD.Print("pressed 1");
         }
+        SettingsHandler.Instance.ApplySettings();
     }
 
     public override void _Input(InputEvent @event)

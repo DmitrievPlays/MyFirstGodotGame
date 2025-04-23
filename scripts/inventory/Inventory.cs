@@ -20,37 +20,37 @@ public abstract class Inventory
 
     public static void SwapSlots(Slot slot1, Slot slot2)
     {
-        var tempResource = slot1.Resource;
-        var tempResourceAmount = slot1.ItemAmount;
+        var tempBaseItem = slot1.BaseItem;
+        var tempBaseItemAmount = slot1.ItemAmount;
 
-        slot1.Resource = slot2.Resource;
+        slot1.BaseItem = slot2.BaseItem;
         slot1.ItemAmount = slot2.ItemAmount;
 
-        slot2.Resource = tempResource;
-        slot2.ItemAmount = tempResourceAmount;
+        slot2.BaseItem = tempBaseItem;
+        slot2.ItemAmount = tempBaseItemAmount;
     }
 
     /// <summary>
-    /// Resource addition without selecting slot explicitly
+    /// BaseItem addition without selecting slot explicitly
     /// </summary>
-    public abstract void AddItem(Resource resource, int amount);
+    public abstract void AddItem(BaseItem BaseItem, int amount);
 
     /// <summary>
-    /// Resource removing without selecting slot explicitly
+    /// BaseItem removing without selecting slot explicitly
     /// </summary>
-    public abstract void RemoveItem(Resource resource, int amount);
+    public abstract void RemoveItem(BaseItem BaseItem, int amount);
 
     /// <summary>
-    /// Resource addition to slot with index
+    /// BaseItem addition to slot with index
     /// </summary>
-    public abstract void AddItem(Resource resource, int amount, int index);
+    public abstract void AddItem(BaseItem BaseItem, int amount, int index);
 
     /// <summary>
-    /// Resource removing from slot with index
+    /// BaseItem removing from slot with index
     /// </summary>
     public virtual void RemoveItemFrom(int slot)
     {
-        GetItems()[slot].Resource = null;
+        GetItems()[slot].BaseItem = null;
         GetItems()[slot].ItemAmount = 0;
         // OnInventoryChanged?.Invoke(this, EventArgs.Empty);
     }
@@ -66,19 +66,19 @@ public abstract class Inventory
     public abstract Slot GetSlotByIndex(int index);
 
     /// <summary>
-    /// Can this inventory contain this type of resource, OVERALL
+    /// Can this inventory contain this type of BaseItem, OVERALL
     /// </summary>
-    public abstract bool CanContain(Resource resource);
+    public abstract bool CanContain(BaseItem BaseItem);
 
     /// <summary>
-    /// If there is at least one not fulfilled slot for the resource collected
+    /// If there is at least one not fulfilled slot for the BaseItem collected
     /// </summary>
-    public abstract bool CanCollect(Resource resource);
+    public abstract bool CanCollect(BaseItem BaseItem);
 
     /// <summary>
-    /// Can this inventory contain this type of resource, BUT IN THIS SLOT
+    /// Can this inventory contain this type of BaseItem, BUT IN THIS SLOT
     /// </summary>
-    public abstract bool CanContain(Resource resource, Slot slot);
+    public abstract bool CanContain(BaseItem BaseItem, Slot slot);
 
     public abstract ImmutableDictionary<int, Slot> GetItems();
 }

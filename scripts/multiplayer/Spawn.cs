@@ -37,7 +37,7 @@ public partial class Spawn : Node
         var character = ResourceLoader.Load<PackedScene>("res://player.tscn").Instantiate() as PlayerController;
 
         // Set player id.
-        character.player = id;
+        //character.player = id;
 
         // Randomize character position.
         var pos = Vector2.FromAngle(new Random().Next() * 2 * Mathf.Pi);

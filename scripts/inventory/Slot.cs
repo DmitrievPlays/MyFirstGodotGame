@@ -1,12 +1,12 @@
 ﻿public class Slot
 {
-    public Resource Resource { get; set; }
+    public BaseItem BaseItem { get; set; }
     public int ItemAmount { get; set; }
     public SlotProperties Properties { get; init; }
 
-    public Slot(Resource resource, int amount)
+    public Slot(BaseItem resource, int amount)
     {
-        Resource = resource;
+        BaseItem = resource;
         ItemAmount = amount;
     }
 

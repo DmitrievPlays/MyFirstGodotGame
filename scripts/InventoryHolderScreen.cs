@@ -21,7 +21,7 @@ public partial class InventoryHolderScreen : PanelContainer
 
     public override void _Ready()
     {
-        _customScreenPrefab = ResourceLoader.Load<PackedScene>("res://custom_screen.tscn");
+        _customScreenPrefab = ResourceLoader.Load<PackedScene>("res://prefabs/custom_screen.tscn");
         _hoveredItemPreview = GetNode<Area2D>("MouseCursor").GetNode<SlotInfo>("InventoryItem");
     }
 
@@ -79,7 +79,7 @@ public partial class InventoryHolderScreen : PanelContainer
             {
                 if (HoverOverItem is not null)
                 {
-                    HoverOverInventory.AddItem(GrabbedItem.Slot.Resource, GrabbedItem.ItemAmount, HoverOverItem.SlotID);
+                    HoverOverInventory.AddItem(GrabbedItem.Slot.BaseItem, GrabbedItem.ItemAmount, HoverOverItem.SlotID);
                     GrabbedItemInventory.RemoveItemFrom(GrabbedItem.SlotID);
                     //Inventory.SwapSlots(GrabbedItem.Slot, HoverOverItem.Slot);
                     GrabbedItem = null;
@@ -101,12 +101,12 @@ public partial class InventoryHolderScreen : PanelContainer
             }
             else
             {
-                if (HoverOverItem?.Slot?.Resource is not null)  // Clicked to take
+                if (HoverOverItem?.Slot?.BaseItem is not null)  // Clicked to take
                 {
                     GrabbedItem = HoverOverItem;
                     GrabbedItemInventory = HoverOverInventory;
                     _hoveredItemPreview.Slot = GrabbedItem.Slot;
-                    ((TextureRect)_hoveredItemPreview.GetNode("Margin/Icon")).Texture = GD.Load(GrabbedItem.Slot?.Resource?.Icon) as Texture2D;
+                    ((TextureRect)_hoveredItemPreview.GetNode("Margin/Icon")).Texture = GD.Load(GrabbedItem.Slot?.BaseItem?.Icon) as Texture2D;
                     _hoveredItemPreview.Show();
 
                     HoverOverInventory.OnChanged(this, EventArgs.Empty);

@@ -30,18 +30,18 @@ public class PlayerInventory : Inventory
         return inventory.ToImmutableDictionary();
     }
 
-    public override void AddItem(Resource resource, int amount)
+    public override void AddItem(BaseItem resource, int amount)
     {
         foreach (var slot in _slots.Values)
         {
-            if (slot.Resource is null || slot.Resource.Id != resource.Id)
+            if (slot.BaseItem is null || slot.BaseItem.Id != resource.Id)
                 continue;
 
-            var difference = slot.Resource.MaxPerStack - slot.ItemAmount;
+            var difference = slot.BaseItem.MaxPerStack - slot.ItemAmount;
             var canBeInsertedAmount = difference < amount ? difference : amount;
             if (canBeInsertedAmount > 0)
             {
-                slot.Resource = resource;
+                slot.BaseItem = resource;
                 slot.ItemAmount += canBeInsertedAmount;
                 amount -= canBeInsertedAmount;
             }
@@ -52,11 +52,11 @@ public class PlayerInventory : Inventory
 
         foreach (var slot in _slots.Values)
         {
-            if (slot.Resource is not null)
+            if (slot.BaseItem is not null)
                 continue;
 
             var canBeInsertedAmount = resource.MaxPerStack < amount ? resource.MaxPerStack : amount;
-            slot.Resource = resource;
+            slot.BaseItem = resource;
             slot.ItemAmount = canBeInsertedAmount;
             amount -= canBeInsertedAmount;
 
@@ -66,11 +66,11 @@ public class PlayerInventory : Inventory
         OnChanged(this, EventArgs.Empty);
     }
 
-    public override void RemoveItem(Resource resource, int amount)
+    public override void RemoveItem(BaseItem resource, int amount)
     {
         foreach (var slot in _slots.Values)
         {
-            if (slot.Resource is null || slot.Resource.Id != resource.Id)
+            if (slot.BaseItem is null || slot.BaseItem.Id != resource.Id)
                 continue;
 
             if (slot.ItemAmount > amount)
@@ -80,7 +80,7 @@ public class PlayerInventory : Inventory
             else if (slot.ItemAmount <= amount)
             {
                 amount -= slot.ItemAmount;
-                slot.Resource = null;
+                slot.BaseItem = null;
                 slot.ItemAmount = 0;
             }
             if (amount == 0)
@@ -89,11 +89,11 @@ public class PlayerInventory : Inventory
         OnChanged(this, EventArgs.Empty);
     }
 
-    public override bool CanContain(Resource resource) => true;
+    public override bool CanContain(BaseItem resource) => true;
 
-    public override bool CanContain(Resource resource, Slot slot) => true;
+    public override bool CanContain(BaseItem resource, Slot slot) => true;
 
-    public override bool CanCollect(Resource resource) => _slots.Values.Any(x => (x.Resource == resource && x.ItemAmount < resource.MaxPerStack) || x.Resource is null);
+    public override bool CanCollect(BaseItem resource) => _slots.Values.Any(x => (x.BaseItem == resource && x.ItemAmount < resource.MaxPerStack) || x.BaseItem is null);
 
     public override ImmutableDictionary<int, Slot> GetItems() => _slots;
 
@@ -102,9 +102,9 @@ public class PlayerInventory : Inventory
         return true;
     }
 
-    public override void AddItem(Resource resource, int amount, int index)
+    public override void AddItem(BaseItem resource, int amount, int index)
     {
-        _slots[index].Resource = resource;
+        _slots[index].BaseItem = resource;
         _slots[index].ItemAmount = amount;
 
         OnChanged(this, EventArgs.Empty);
